@@ -1,0 +1,132 @@
+---
+title: "Data621 HW3"
+author: "Mustafa Telab"
+date: "10/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Your objective is to build a binary logistic regression model on the training data set to predict whether the neighborhood will be at risk for high crime levels. You will provide classifications and probabilities for the evaluation data set using your binary logistic regression model. You can only use the variables given to you (or variables that you derive from the variables provided). Below is a short description of the variables of interest in the data set:
+
+ zn: proportion of residential land zoned for large lots (over 25000 square feet) (predictor variable)
+ indus: proportion of non-retail business acres per suburb (predictor variable)
+ chas: a dummy var. for whether the suburb borders the Charles River (1) or not (0) (predictor variable)
+ nox: nitrogen oxides concentration (parts per 10 million) (predictor variable)
+ rm: average number of rooms per dwelling (predictor variable)
+ age: proportion of owner-occupied units built prior to 1940 (predictor variable)
+ dis: weighted mean of distances to five Boston employment centers (predictor variable)
+ rad: index of accessibility to radial highways (predictor variable)
+ tax: full-value property-tax rate per $10,000 (predictor variable)
+ ptratio: pupil-teacher ratio by town (predictor variable)
+ black: 1000(Bk - 0.63)2 where Bk is the proportion of blacks by town (predictor variable)
+ lstat: lower status of the population (percent) (predictor variable)
+ medv: median value of owner-occupied homes in $1000s (predictor variable)
+ target: whether the crime rate is above the median crime rate (1) or not (0) (response variable)
+
+```{r, message=FALSE}
+#import packages
+library(tidyverse)
+library(corrplot)
+library(Matrix)
+library(Hmisc)
+```
+
+```{r, message = FALSE}
+#read data
+dftest = read_csv('crime-evaluation-data_modified.csv')
+dftrain = read_csv('crime-training-data_modified.csv')
+```
+
+#Explore Predictors
+
+Distribution
+We acknoledge some interesting distributions from the plots below.
+
+
+```{r}
+hist.data.frame(dftrain)
+```
+Correlation
+
+Using the box&whiskers below, we can see the change in variable distributions that are associated with the target variable
+```{r}
+par(mar = c(1,1,1,1))
+rows = 4
+fields = ncol(dftrain)-1
+par(mfrow = c(rows, round(ncol(dftrain)/rows, 1)+1))
+invisible(lapply(1:fields, function(i) boxplot(unlist(dftrain[,i]) ~ target, data = dftrain,main = colnames(dftrain)[i])))
+
+```
+
+Covariance
+```{r}
+cormtx = cor(dftrain,use = "pairwise")
+corrplot(cormtx,method="color", type = 'upper',tl.pos = 'td')
+corrplot(cormtx,method="number", type = 'lower', add = TRUE,number.digits = 1,tl.pos = 'lt')
+```
+
+Gather a list of the top correlated predictor variables reference later during feature engineering
+```{r}
+#convert matrix to list for sorting
+#https://stackoverflow.com/questions/33781147/r-converting-correlation-matrix-to-pairwise
+df_corr_pw<-reshape2::melt( cbind(
+  V1=rownames(cormtx), 
+  as.data.frame(cormtx))
+)
+df_corr_pw<-subset(df.corr.pw,value!=1)
+
+tied_vars = df_corr_pw%>%
+  group_by(value)%>%
+  summarise(V1 = max(V1), variable = min(as.character(variable)))%>%
+  arrange(desc(abs(value)))
+head(tied_vars,20)
+```
+
+Given the target variable denotes the class as above/below the median, we should find an evenish distribution; which we do; as apparent from the below histogram.
+```{r}
+hist(dftrain$target, breaks = 2, labels = c('0','1'), xlab ="")
+```
+
+*** Use these plots to determine tranformation needs
+-zn,rad,tax,ptratio -  Build general hists, and partitioned hists to show different distributions within.
+
+```{r}
+##One var normal w/ imputed outliers; another as binary
+dftrain %>%
+  ggplot(aes(x=ptratio , fill=as.factor(target))) +
+  geom_histogram( color="#e9ecef", alpha=0.6, position = 'identity') +
+    scale_fill_manual(values=c("#69b3a2", "#404080"))
+```
+#Data Prep
+-regression imputation
+-binary variable creation
+
+#Build Model
+Iteraction Terms
+  Options
+    -Make rad/tax binary (Close vs Far) & continioues
+    -Make zn binary
+    -age exp() transformation
+    -ptratio-impute left tail crime concentration(contrary to common sense)
+Logit(w/ & w/o transformation)
+Probit(w/ & w/o transformation)
+Marginal Plots
+Reverse elimination
+Leverage Values(Residuals vs leverage)
+
+#Choose Model
+-Goodness of Fit
+  Log likelihood
+  Odds
+  Deviance
+  Standardized rediduals
+  Accurate(confusion matrix)
+  AIC/BIC/ROC
+  
+  
+  
+  
