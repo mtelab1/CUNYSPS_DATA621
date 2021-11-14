@@ -428,9 +428,9 @@ model1_aki$data <- augment(model1_aki) %>%
 model1_aki$data %>% top_n(10, .cooksd)
 plot(model1_aki, which = 4, id.n = 3)  # keep an eye on obs > 4/n 
 #plot std residuals
-# ggplot(model1_aki$data, aes(index, .std.resid)) + 
-#   geom_point(aes(color = target_flag), alpha = .5) +
-#   theme_bw()
+ggplot(model1_aki$data, aes(index, .std.resid)) + 
+   geom_point(aes(color = target_flag), alpha = .5) +
+  theme_bw()
 #Filter potential influential data points with abs(.std.res) > 3
 model1_aki$data %>% 
   filter(abs(.std.resid) > 3)
