@@ -308,7 +308,7 @@ df%>%
 
 
 ```{r preserve_df}
-crashdf = df
+dfpreserve = df
 ```
 
 
@@ -486,8 +486,8 @@ model2_df<-model1_df%>%
 
 ```{r set_flagdm2 ,message = FALSE}
 #build model with transformed vars
-#model2 <- glm(target_flag~kidsdriv+homekids+parent1+mstatus+education+car_use+tif+car_type+oldclaim+revoked+urbanicity+home_val+job+sqrt_travtime+sqrt_mvr_pts+sqrt_yoj+sqrt_clm_freq+log_bluebook+sqrt_income,family='binomial',model2_df)
-model2 <- glm(target_flag~kidsdriv+homekids+parent1+mstatus+education+car_use+tif+car_type+oldclaim+revoked+urbanicity+home_val+sqrt(travtime)+sqrt(mvr_pts)+sqrt(yoj)+sqrt(clm_freq)+log(bluebook)+sqrt(income),family='binomial',model2_df)
+model2 <- glm(target_flag~kidsdriv+homekids+parent1+mstatus+education+car_use+tif+car_type+oldclaim+revoked+urbanicity+home_val+job+sqrt_travtime+sqrt_mvr_pts+sqrt_yoj+sqrt_clm_freq+log_bluebook+sqrt_income,family='binomial',model2_df)
+#model2 <- glm(target_flag~kidsdriv+homekids+parent1+mstatus+education+car_use+tif+car_type+oldclaim+revoked+urbanicity+home_val+sqrt(travtime)+sqrt(mvr_pts)+sqrt(yoj)+sqrt(clm_freq)+log(bluebook)+sqrt(income),family='binomial',model2_df)
 model2_aki<-step(model2, trace=0) 
 summary(model2_aki)
 ```
@@ -588,7 +588,7 @@ plot(residuals~linpred, diag, xlab = "linear predictor")
 
 #Cost prediction
 ```{r set_df}
-dfcrash = crashdf%>% 
+dfcrash = dfpreserve%>% 
   filter(target_flag == 1)%>%
   select(-target_flag)
 ```
