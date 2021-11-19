@@ -1,7 +1,7 @@
 ---
-title: "Crash & Cost Prediction"
+title: "Predicting the Occurrence and Cost of Car Accidents"
 author: "Biguzzi, Connin, Greenlee, Moscoe, Sooklall, Telab, and Wright"
-date: "10/15/2021"
+date: "11/21/2021"
 header-includes:
   - \usepackage{dcolumn}
 output: 
@@ -16,14 +16,14 @@ options(knitr.kable.NA = '')
 
 
 # Introduction
-The below analysis centers around predicting the probability of a car crash; and the cost implications of said crash, based on a collection of observations.  Naturally we will begin with an exploration of the data to build an initial impression on the relationships; which will guide our variable transformations and/or variable selections.  This will lead into the construction of two models: a logistic regression for the binary target variable of Crash vs No Crash; and a linear model for the target dollar cost variable.  Ultimately, we will integrate both results to provide a summary from the context of an insurance provider.
+This analysis predicts the probability that a given insurance customer will be involved in a car crash, as well as the cost of the crash to the insurance company. We begin with an exploration of the data to build an initial impression on the relationships, which will guide how we transform and select variables. We construct two models: a logistic regression for the binary target variable of Crash vs No Crash; and a least-squares model for the target dollar cost variable.  Ultimately, we will integrate both results to help the insurer evaluate their financial risk.
 
 In this report we will: 
 
 * Explore the data
-* Transform data to address multicollenearity and meet variable distribution needs
+* Transform data to address multicollinearity and meet variable distribution needs
 * Compare different models and select the most accurate model
-* Test our model on the evaluation dataset
+* Test our model on the evaluation data set
 
 ```{r import_packages, include = FALSE}
 library(tidyverse)
@@ -113,6 +113,7 @@ trainpath = 'https://raw.githubusercontent.com/mtelab1/CUNYSPS_DATA621/main/HW4/
 raw <- read_csv(trainpath)
 test <- read_csv(evalpath)
 ```
+
 Data cleaning
 
 ```{r initial_cleaning, include = FALSE}
@@ -177,17 +178,9 @@ df%>%
     filter(missing_count>0)%>%
     arrange(desc(missing_count))%>%
     flextable()
-
-
 ```
 
-
-
-We move to impute the missing data:  
-Recursive Partitioning and Regression Trees is used to impute the numerical variable.  
-Multivariate Imputation by Chained Equations is used to impute the categorical variable.
-
-
+To impute missing numeric variables, we use recursive partitioning. Categorical variables are imputed using multivariate imputation by chained equations (MICE).
 
 ```{r imputations, include = FALSE}
 #impute numerical vars using dlookr, methods have been preselected based on initial plots.
@@ -246,7 +239,6 @@ df%<>%dplyr::select(!c(car_age, home_val, yoj, income, age))%>%
 df%<>%mutate_if(is.numeric, round)
 ```
 
-
 ```{r, include=FALSE}
 #impute values for missing categorical data - job
 job<-imputate_na(df, job, method = "mice", seed = 999)
@@ -276,11 +268,11 @@ grid.arrange(g1, g2, g3, g4 , g5, g6, ncol=1)
 
 ```
 
-
 ### Distributions
 
-There are some important findings from examining the histograms of the variables.Response variables: Both of our target variables are very skewed with a long right tail.  'target_amt' appears to respond well to a log transformation.  However 'target_flag' is categorical; so we will plan on implementing a zero inflation strategy.
-Predictors:  'car_age' and 'home_val' show a bi-modal distribution, with centers around zero and more normal appearing right tail.  This is to be expected with 'home_val' as those who do not have a home would return a zero value.  The same is not obvious for why 'car_age' would have so many clustered closed to zero.
+There are some important findings from examining the histograms of the variables. Response variables: Both of our target variables are very skewed with a long right tail.  `target_amt` appears to respond well to a log transformation.  However `target_flag` is categorical; so we will plan on implementing a zero inflation strategy.  
+
+Predictors:  `car_age` and `home_val` show a bi-modal distribution, with one peak at zero and a normal right tail.  This is to be expected with 'home_val' as those who do not have a home would return a zero value. The same is not obvious for why 'car_age' would have so many clustered closed to zero.
 We cannot say more without further context, but it should be noted in case there are issues down the line.
 
 ```{r view_distributions , figures-side, fig.show="hold", out.width="50%", include=FALSE}
@@ -304,15 +296,11 @@ df%>%
     flextable(theme_fun = theme_booktabs())
 ```
 
-
 ```{r view_distributions, figures-side, fig.show="hold", out.width="50%"}
 
 df%>%plot_normality()	
 
 ```
-
-
-
 
 ```{r smalldatacorrection}
 #Correct obvious data errors - negative values
@@ -320,10 +308,9 @@ df$car_age[df$car_age < 0] <- NA
 
 ```
 
-
 ### Outliers
 
-We note outlier concentrations of >5% for target_amt, kidsdriv, homekids, yoj and oldclaim.
+We note outlier concentrations of >5% for `target_amt`, `kidsdriv`, `homekids`, `yoj` and `oldclaim`.
 
 ```{r outliers}
 
@@ -341,9 +328,7 @@ df %>%
 
 ### Explore relationships between response and categorical predictors
 
-Upon reviewing the below mosaic and box plots, we can determine that the below listed variables have hardly any relationship with the response.  This will be kept in mind during the variable selection phase.
-'sex'
-'red_car'
+Based on the mosaic and box plots below, `sex` and `red_car` are both only weakly related to the response. This will be kept in mind during the variable selection phase.
 
 ```{r flag_categorical_relationship, figures-side, fig.show="hold", out.width="50%"}
 df %>% 
@@ -445,7 +430,7 @@ for (v in seq(1,length(df))) {
 
 ### Co-variance
 
-We establish that there is only one pair of predictors that have a co-variance of >.5; 'home_val' & 'income'.  We may consider combining into an interaction term, or possible removing one from the model.  We also note that many of the correlations against the target variable appear low; which is consistent with the above plots.
+We establish that there is only one pair of predictors that have a co-variance greater than 0.5": 'home_val' and 'income'.  We may consider combining into an interaction term, or possibly removing one from the model.  We also note that many of the correlations with the target variable appear low. This finding is consistent with the plots above.
 
 
 ```{r preserve_df}
@@ -471,8 +456,7 @@ df%>%plot_correlate()
 
 # Construct Logistical Classification Model
 
-Step 1. Assess class balance - 74% = 0, 26% =1.A 3:1 ratio really isn't a rare event issue. However, looked into weighting and various balancing approaches. They all caused the AIC to sky-rocket. Decision made to move forward with training data of similar proportion.
-
+Step 1. Although there is a 3:1 class imbalance in the response variable, models built with balanced training sets had AIC values higher than those that randomly sampled from the available data. This led us to proceed without taking steps to balance the training set.
 
 ```{r}
 df%>%count(target_flag)%>%
@@ -480,10 +464,11 @@ df%>%count(target_flag)%>%
     flextable()%>%
   set_caption('All Observations')
 ```
+
 Step 2. Make additional factor/level adjustments following prior data evaluation
 
--kidsdriv  [N,Y]
--job  [Blue Collar , Professional]
+-kidsdriv [N,Y]
+-job  [Blue Collar, Professional]
 -education [High School, Bachelors, Masters, PhD]
 
 ```{r set_flagdf}
@@ -511,12 +496,9 @@ df %<>%mutate_if(is_character, ~(factor(.)))
 df$education<-factor(df$education, levels=c("High School", "Bachelors", "Masters", "PhD"))
 ```
 
-
-
 Step 3. Build a training and test data set. 
 
 Partition off 25% of the data to serve as a test set.
-
 ```{r}
 
 #using caret
@@ -551,16 +533,11 @@ df_test%>%count(target_flag)%>%
 
 #head(df_train, 10)%>%
   #  flextable()
-
-
-
 ```
 
 ## Model 1: Base logistic model
 
-
-This model includes all predictors and Akaiki criterion for variable selection.
-
+This model includes all predictors and selects variables that reduce the Akaike information criterion (AIC).
 
 ```{r set_flagm1}
 
@@ -576,10 +553,9 @@ model1 <- glm(target_flag ~ ., df_train, family='binomial')%>%
 summ(model1)
 ```
 
-
 #### Model 1 Evaluation
 
-Note: yoj, red_car, age, car_age  are not significant in Model 1 (df_train)
+Note: `yoj`, `red_car`, `age`, `car_age` are not significant in Model 1 (`df_train`).
 
 ***Diagnostics***
 ```{r, include= FALSE}
@@ -629,10 +605,8 @@ par(pty='s')
 proc<- roc(response=model1_df$target_flag, predictor=model1_df$predicted, plot=TRUE, legacy.axes=TRUE, auc.polygon=TRUE, col='blue', main = 'Model 1 ROC Curve', max.auc.polygon=TRUE, print.auc=TRUE)
 ```
 
-
-
 ***Dispersion***
-We assess dispersion with two calculations; their results are shown below.
+We assess dispersion with two calculations whose results are shown below.
 
 ```{r flagm1_dispersion}
 
@@ -653,8 +627,8 @@ print(paste0('Next we obtain a Pearson Chi-Squared test statistic of ', devchi ,
 
 ***Assumption of Linearity***
 
-We can note that linearity is questionable for home-kids, but not convincing enough to remove at this time.
-yoj, oldclaim, or income are not considered in this diagnostic since they were not significant. 
+We note that linearity is questionable for `home-kids`, but not convincing enough to remove at this time.
+`yoj`, `oldclaim`, or `income` are not considered in this diagnostic since they were not significant. 
 
 ```{r flagm1_linearity}
 
@@ -674,13 +648,11 @@ with(model1_df, scatter.smooth(clm_freq, logit, lpars = list(col = "red", lwd = 
 with(model1_df, scatter.smooth(bluebook, logit, lpars = list(col = "red", lwd = 3, lty = 3)))
 ```
 
-
 ***Outliers & Influential Points***
 
-Examining the standardized residuals (.std.resid) and the Cook’s distance (.cooksd) using the R function augment() [broom package] we can note the below findings.
--Cooks distance indicates several standout obs (3722, 3592, 6501) but no influential points (id. D >1.0)
--There are no obs with std residual beyond 3 stdev - ie., no influential obs
-
+Examining the standardized residuals (.std.resid) and the Cook’s distance (.cooksd) using `broom::augment()`, we note:
+-Cooks distance indicates several standout observations (3722, 3592, 6501) but no influential points (id. D >1.0)
+-There are no observations with std residual greater than 3 stdev - ie., no influential observations.
 
 **http://www.sthda.com/english/articles/36-classification-methods-essentials/148-logistic-regression-assumptions-and-diagnostics-in-r/
 
@@ -711,10 +683,9 @@ ggplot(model1$data, aes(index, .std.resid)) +
   theme_bw()
 ```
 
-
 ***Check for Independence***
 
-Each point on the below plot represents an aggregation of the prediction & residual values for each percentile bin of the predictions.  We observe that the higher percentiles have a higher average residual. We see this as definite pattern which suggests that the model may be miss-classified.
+Each point on the below plot represents an aggregation of the prediction & residual values for each percentile bin of the predictions.  We observe that the higher percentiles have a higher average residual. We see this as a pattern that suggests the model may be misclassified.
 
 ```{r flagm1_Independence, fig.height=8, fig.width=8}
 
@@ -727,13 +698,11 @@ diag<-summarize(bins, residuals=mean(residuals), linpred = mean(linpred))
 plot(residuals~linpred, diag, xlab = "linear predictor")
 ```
 
-
-
 ***Goodness of Fit - marginal plots***
 
 We now review how the fitted logistic regression compares to the data using the below marginal plots.
-Findings: consider transformations for  trav_time and tif. 
-We will drop income, oldclaim, and yoj from subsequent models. 
+Findings: consider transformations for  `trav_time` and `tif`. 
+We will drop `income`, `oldclaim`, and `yoj` from subsequent models. 
 
 ```{r flagm1_fit, fig.align='center', fig.height=10,fig.width=10, message = FALSE}
 
@@ -746,14 +715,13 @@ marginals<-mmps(model1,main=NULL)
 
 The following transformations result from some trial and error: 
 
-sqrt: income
-log: bluebook
-quadratic: travtime
+sqrt: `income`  
+log: `bluebook`  
+quadratic: `travtime`  
 
-yoj & homekids removed per insignificance.
+`yoj` and `homekids` are removed because they are not significant predictors.
 
-Note: AIC has gone down slightly relative to Model1
-
+Note: AIC has gone down slightly relative to Model1.
 
 ```{r set_flagdf2 , message = FALSE}
 
@@ -834,7 +802,7 @@ model2_marg<-mmps(model2,main=NULL)
 
 ***Independence***
 
-Still seeing pattern - possible mis-specification
+The persistence of a pattern means that we cannot yet rule out the possibility that the model is misspecified.
 
 ```{r fig.height=8, fig.width=8}
 
@@ -851,13 +819,13 @@ plot(residuals~linpred, diag, xlab = "linear predictor")
 
 ## Model 3 - Feature engineering and Interactions among predictor variables
 
-Establish new variable of liquidity = (home_val+1)/(income+1) to account for the co-variance that was discovered earlier.  Some home_val observations are = 0, likely indicating renters, so +1 is added to the variables to avoid 0 division NaN results.
+Establish new variable of liquidity = (home_val+1)/(income+1) to account for the co-variance that was discovered earlier.  Some `home_val` observations are = 0, likely indicating renters, so +1 is added to the variables to avoid division by zero.
 
 The below factors are applied in an attempt to capture important groupings noticed in histograms.
--mvr_pts= factor("none", "low", "high")
--liquidity= factor("low", "high")
--tif factor=("low", "moderate", "high")
--clm_freq= factor("none","moderate","high")
+-`mvr_pts` = factor("none", "low", "high")
+-`liquidity` = factor("low", "high")
+-`tif` factor=("low", "moderate", "high")
+-`clm_freq` = factor("none","moderate","high")
 
 ```{r include= FALSE}
 #create dataframe for evaluating interactions
@@ -1061,12 +1029,11 @@ plot(residuals~linpred, diag, xlab = "linear predictor")
 ```
 \newpage
 
-## Logistical Classification Model Selection
+## Logistic Classification Model Selection
 
-model performance similar across all cases. Model1 had the highest accuracy. Model2 has the lowest AIC and predictor numbers. 
+Model performance is similar across all cases. Model1 had the highest accuracy. Model2 has the lowest AIC.
 
-The models do well at predicting no crashes but performs less well at predicting crashes  with a .5 threshold. Given the payout risk - a threshold of ~0.3 might be advisable. 
-
+The models do well at predicting no crashes but perform less well at predicting crashes  with a .5 threshold. Given the payout risk, a threshold  near 0.3 might be advisable.
 
 ```{r}
 options(width = 40)
@@ -1078,7 +1045,7 @@ options(width = 40)
 
 # Construct Linear Regression Model
 
-Firstly, we will like to how the saturated model performs under the standard Gaussian assumptions.  We find there are only four variables with significant p-values; and the r-squared is very low.  Also the residual plots fail the required assumptions regarding the normal distribution and constant variance.  We will experiment with the variable selection, but we also need to either transform the response variable or change the link function.
+The full model includes only four variables with significant p-values, and the r-squared is very low.  Also the residual plots fail the required assumptions regarding the normal distribution and constant variance. We will experiment with variable selection, but we also need to either transform the response variable or change the link function.
 
 ```{r train_arg, include= FALSE}
 train_control <- trainControl(method = "cv",number = 10, p =.2, predictionBounds = c(0,NA))
@@ -1107,8 +1074,13 @@ plot(costm1)
 ## Cost Model 2: Feature Reduction
 
 
-By removing some of the variables we earmarked earlier in the analysis, we can see a reduction in the Residual Standard Error.
--parent1, -age, -homekids, - kidsdriv, -red_car, -urbanicity,-job
+Removing the variables below reduces Residual Standard Error:  -`parent1`  
+-`age`  
+-`homekids`  
+-`kidsdriv`  
+-`red_car`  
+-`urbanicity`  
+-`job`  
 ```{r cost_model_1}
 dfcrashm2 = dfcrash %>%
   select(-parent1, -age, -homekids, - kidsdriv, -red_car, -urbanicity, -job, - red_car)
@@ -1126,7 +1098,7 @@ plot(costm2)
 \newpage
 
 ## Cost Model 3: Transformation & Weights
-We attempt to correct the heteroscadasticity of the residual plots through transformations.
+We attempt to correct the heteroskedasticity of the residual plots through transformations.
 
 Lets review the linearity from the plots below.
 
@@ -1139,7 +1111,9 @@ dfcrash %>%
   facet_wrap(~ var, scales = "free") +
   ggthemes::theme_fivethirtyeight()
 ```
-Now with a log transformation on the response.  We can see that this evaporates much of the linearity we noticed above.
+
+Now with a log transformation on the response.  We can see that this removes much of the linearity we noticed above.
+
 ```{r, fig.height=7}
 df_num = dfcrash %>% select(where(is.numeric),-target_amt) %>% names()
 dfcrash %>%
@@ -1149,11 +1123,8 @@ dfcrash %>%
   facet_wrap(~ var, scales = "free") +
   ggthemes::theme_fivethirtyeight()
 ```
-Below is another set of plots that feature the below predictor transformations.  We can iterate through additional attempts, but it appears that the relationship 
-sqrt: income
-log: bluebook
-quadratic: travtime
 
+Below is another set of plots that feature the below predictor transformations.
 
 ```{r, fig.height=7}
 df_num = dfcrash %>% select(where(is.numeric),-target_amt) %>% names()
@@ -1167,9 +1138,7 @@ dfcrashm3%>%
   ggthemes::theme_fivethirtyeight()
 ```
 
-
-
-The last component to our thrid model is the application of weights.  The first step shown below is the calculation these weight coefficients.  Our strategy is to use the results from our base model; regressing the residuals against its fitted values.  We end up with a distribution of values which loosely represent the variance.  By taking the absolute value of this regression; we can place less value on the observations with greater variance.
+The last component to our third model is the application of weights.  The first step shown below is the calculation of these weight coefficients. Our strategy is to use the results from our base model, regressing the residuals against its fitted values.  We end up with a distribution of values which loosely represent the variance.  By taking the absolute value of this regression we can place less value on the observations with greater variance.
 
 Below is a plot of how the weights along the scale of the response variable.
 ```{r set_wieghts, include=FALSE}
@@ -1181,7 +1150,6 @@ wts = weightlm$fitted.values+abs(min(weightlm$fitted.values))
 ```{r, fig.align = 'center'}
 plot(costm1$fitted.values, wts)
 ```
-
 
 The below weighted model has the lowest residual standard error but the R^2 is still very low.
 ```{r cost_model_3}
@@ -1195,7 +1163,9 @@ plot(costm3)
 #summary(costm3cv)
 #plot(costm3cv$finalModel)
 ```
-As an alternative approach to weighting the model; we implement a Robust Linear Regression.  The function uses Iteratively Reweighted Least Squares(IRLS) to maximize the likelihood estimation.  The Residual standard error is reduced again.
+
+As an alternative approach to weighting the model we implement a Robust Linear Regression. The function uses Iteratively Reweighted Least Squares (IRLS) to obtain a maximum likelihood estimate of the parameters. The residual standard error is reduced again.
+
 ```{r cost_model_4}
 library(MASS)
 costm3b = rlm(target_amt ~ .,dfcrashm3, 
@@ -1213,9 +1183,7 @@ plot(costm3b$fitted.values,dfcrashm3$target_amt)
 
 ## Cost Model 5 Target Interaction Term
 
-Although there has been some improvements across the above models; the R^2 is still much lower than we can be satisfied with.  We now move to rethink the target variable.  It stands to reason that the cost of a crash is mostly a function of the value of the car; and the p-values from the above models tell that story.  Rather than regressing on the cost, which renders most predictors useless, we regression on intensity of the accident.  We can represent that intensity as the cost/bluebook.
-
-
+Although there has been some improvement across the above models, $R^2$ is still very low.  We now move to rethink the target variable.  It stands to reason that the cost of a crash is mostly a function of the value of the car, and the p-values from the above models support this hypothesis. Rather than regressing on the cost, which renders most predictors useless, we model the severity of the accident. We can represent severity as `cost`/`bluebook`.
 
 We will drop the ratios that are >1 assuming these involved incidental bodily harm.
 ```{r}
