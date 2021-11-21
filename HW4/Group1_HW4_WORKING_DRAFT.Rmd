@@ -56,7 +56,8 @@ library(ggplot2)
 library(lattice)
 library(knitr)
 library(ggthemes)
-set_flextable_defaults(table.layout = 'autofit')
+library(mgcViz)#beta reg viz tool
+set_flextable_defaults(table.layout = 'autofit', digits = 2)
 ```
 
 
@@ -149,6 +150,7 @@ df %<>%mutate_if(is_character, ~(factor(.)))
 df$education<-factor(df$education, levels=c("High School", "Bachelors", "Masters", "PhD"))
 ```
 \newpage
+
 We then evaluated our data for missing values. Our assessment distinguished 5 numerical variables and 1 categorical variable with missing entries. The proportion of missingness across these variables was relatively low, ranging from ~ .07 to 6.5 percent. 
 
 ```{r missingness,fig.height = 8, fig.width = 20}
@@ -473,6 +475,7 @@ df_test%>%count(target_flag)%>%
   set_caption('Test Sample')
 
 ```
+\newpage
 
 ## Crash Model 1: Base logistic model
 
@@ -484,12 +487,13 @@ After variable selection and final elimination of nonsignifiant variables, our m
 
 target_flag ~ kidsdriv + parent1 + mstatus + education + travtime + car_use + bluebook + tif + car_type + oldclaim + clm_freq + revoked + mvr_pts + urbanicity + home_val + income + job
 
-```{r set_flagm1}
+```{r set_flagm1,  fig.show="hold"}
 #build model
 df_train%<>%
     dplyr::select(!index)
 model1 <- glm(target_flag ~ ., df_train, family='binomial')%>%
     stepAIC(trace=0) # use Akiaike step, trace 0 prevents intermediate printing, rename model to preserve base
+m1pred = predict(model1,df_test,type= 'response')
 summ(model1)
 ```
 
@@ -527,11 +531,12 @@ model1_df$target_flag<-as.factor(model1_df$target_flag)
                   auc = auc(roc(response = as.numeric(model1_df$target_flag),
                                 predictor = as.numeric(model1_df$predicted)))[1],  #note: using predicted (probs) vs predicted_obs (0,1)
                   AIC = model1$aic, BIC = BIC(model1)))
+
+
 ```
 
 
 \newpage
-
 
 
 
@@ -605,6 +610,8 @@ ggplot(model1$data, aes(index, .std.resid)) +
   theme_bw()
 ```
 
+\newpage
+
 ***Check for Independence***
 
 An additional assumption in a logistic regression model is independence among model residuals. This can be assessed by plotting binned residuals against the linear predictor (logit). On this basis, there does appear to be a pattern of dependence among our residuals (below) which points to a model misspecification. We speculate that this may derive from grouping effects among our categorical variables, given that we are not using time series data. Despite extensive experimentation, we were not able to remove this effect from this model or others that follow.  
@@ -616,6 +623,7 @@ bins<- group_by(res_chk, cut(linpred, breaks=unique(quantile(linpred, (1:100)/10
 diag<-summarize(bins, residuals=mean(residuals), linpred = mean(linpred))
 plot(residuals~linpred, diag, xlab = "linear predictor")
 ```
+\newpage
 
 ***Goodness of Fit - marginal plots***
 
@@ -646,12 +654,21 @@ trans_df%<>%
     dplyr::select(!c(bluebook, income))
 ```
 
+```{r set_flagdf2_test , message = FALSE}
+#create df to contain transformed sqrt, log, vars 
+trans_dftest<-df_test
+trans_dftest%<>%
+    mutate(log_bluebook= log(bluebook))%>%
+    mutate(sqrt_income=sqrt(income))%>%
+    dplyr::select(!c(bluebook, income))
+```
 
 ```{r set_flagm2 ,message = FALSE}
 #build model with transformed vars
 # remove yoj and homekids since they were not significant at .05
 model2 <- glm(target_flag~kidsdriv+parent1+mstatus+education+car_use+tif+car_type+oldclaim+revoked+urbanicity+home_val+job+travtime+I(travtime^2)+
                   mvr_pts+clm_freq+log_bluebook+sqrt_income,family='binomial',trans_df)%>%stepAIC(trace=0) 
+m2pred = predict(model2,trans_dftest,type= 'response')
 summ(model2)
 ```
 \newpage
@@ -660,7 +677,7 @@ summ(model2)
 
 ***Diagnostics***
 
-```{r flagm2_diagnostics , fig.align='center', fig.height=10,fig.width=10, message = FALSE}
+```{r flagm2_diagnostics, include = FALSE}
 #additional metrics
 trans_df$predicted<-predict(model2, trans_df, type='response')
 trans_df%<>%
@@ -669,8 +686,8 @@ trans_df%<>%
         predicted < 0.5 ~ 0))
 trans_df$predicted_obs<-as.factor(trans_df$predicted_obs)
 trans_df$target_flag<-as.factor(trans_df$target_flag)
-#confusion matrix
 (model2_cm<-confusionMatrix(data = trans_df$predicted_obs, reference = trans_df$target_flag))
+
 # transformation results
 (model2_metrics <- tibble(model = "transformation Model: reduced variables",
                   predictors = length(coef(model2))-1,
@@ -684,12 +701,19 @@ trans_df$target_flag<-as.factor(trans_df$target_flag)
                   auc = auc(roc(response = as.numeric(trans_df$target_flag),
                                 predictor = as.numeric(trans_df$predicted)))[1],
                   AIC = model2$aic, BIC = BIC(model2)))
+
+```
+
+```{r, fig.align='center', fig.height=10,fig.width=10, message = FALSE}
+#confusion matrix
+model2_cm
 #roc curve with AUC
 par(pty='s')
 proc<- roc(response=trans_df$target_flag, predictor=trans_df$predicted, plot=TRUE, legacy.axes=TRUE, auc.polygon=TRUE, col='blue', main = 'PROC ROC Curve', max.auc.polygon=TRUE, print.auc=TRUE)
 #review marginal plots
 model2_marg<-mmps(model2,main=NULL)
 ```
+
 
 \newpage
 
@@ -764,7 +788,7 @@ summary(car_clm)
 
 
 
-```{r set_flagdf3vars,include=FALSE}
+```{r set_flagdf3vars_test,include=FALSE}
 # Evaluate liquidity via. histogram -- we find two distinct groups that can be converted to factor variable (liquidity) with low/high values 
 int_df%>%
     mutate(home_val = home_val+1)%>%
@@ -792,6 +816,28 @@ int_df%<>%
 int_df %<>% mutate(clm_freq=cut(clm_freq, breaks=c(-Inf, 0, 3, Inf), labels=c("none","moderate","high")))
 ```
 
+```{r set_flagdf3vars,include=FALSE}
+# Evaluate liquidity via. histogram -- we find two distinct groups that can be converted to factor variable (liquidity) with low/high values 
+
+int_dftest = df_test%<>%
+    mutate(home_val = home_val+1)%>%
+    mutate(income = income +1)%>%
+    mutate(liquidity = home_val/income)%>%
+    mutate(liquidity = cut(liquidity, breaks = c(-Inf, 1, Inf), labels=c("low", "high")))%>%
+    dplyr::select(!c(home_val, income))
+               
+#convert mvr_pts to factor
+int_dftest%<>%
+    mutate(mvr_pts = cut(mvr_pts, breaks = c(-Inf, 0, 3, Inf), labels=c("none", "low", "high")))
+#convert tif to factor
+                         
+int_dftest%<>%
+    mutate(tif = cut(tif, breaks = c(0, 5, 10, Inf), labels=c("low", "moderate", "high")))   
+#convert clm_freq to factor
+                   
+int_dftest %<>% mutate(clm_freq=cut(clm_freq, breaks=c(-Inf, 0, 3, Inf), labels=c("none","moderate","high")))
+```
+
 Model3 had the following form after variable selection with AiC
 
 target_flag = kidsdriv + parent1 + mstatus + education + travtime + car_use + log(bluebook) + tif + car_type + 
@@ -801,9 +847,9 @@ Our model AIC (5586) incrased relative to model2 and model1 indicating a slightl
     
 Other model diagnostics (e.g., linearity, dispersion, influential obs, residual independence) yielded resuts similar to model1 and model2.
 
-```{r set_flagm3}
+```{r set_flagm3,  fig.show="hold"}
 model3<- glm(target_flag~ kidsdriv + parent1 + mstatus + education + travtime +  car_use + I(log(bluebook)) + tif + car_type + oldclaim + clm_freq+revoked + mvr_pts + urbanicity + liquidity + job + car_use*car_type+urbanicity*travtime+mvr_pts*revoked++car_type*clm_freq, int_df, family= binomial)%>%stepAIC(trace=0)
-
+m3pred = predict(model3,int_dftest,type= 'response')
 summ(model3)
 ```
 
@@ -811,7 +857,7 @@ summ(model3)
 
 ***Diagnostics***
 
-```{r flagm3_diagnostics}
+```{r flagm3_diagnostics, include=FALSE}
 #additional metrics
 int_df$predicted<-predict(model3, int_df, type='response')
 int_df%<>%
@@ -820,7 +866,6 @@ int_df%<>%
         predicted < 0.5 ~ 0))
 int_df$predicted_obs<-as.factor(int_df$predicted_obs)
 int_df$target_flag<-as.factor(int_df$target_flag)
-#confusion matrix
 model3_cm<-confusionMatrix(data = int_df$predicted_obs, reference = int_df$target_flag)
 # transformation results
 (model3_metrics <- tibble(model = "Feature_Eng+Transform Model: reduced variables",
@@ -836,7 +881,11 @@ model3_cm<-confusionMatrix(data = int_df$predicted_obs, reference = int_df$targe
                                 predictor = as.numeric(int_df$predicted)))[1],
                   AIC = model3$aic, BIC = BIC(model3)))
 ```
+
+
 ```{r flagm3_diagnostics , fig.align='center', fig.height=5,fig.width=5, message = FALSE}
+#confusion matrix
+model3_cm
 #roc curve with AUC
 par(pty='s')
 proc<- roc(response=int_df$target_flag, predictor=int_df$predicted, plot=TRUE, legacy.axes=TRUE, auc.polygon=TRUE, col='blue', main = 'PROC ROC Curve', max.auc.polygon=TRUE, print.auc=TRUE)
@@ -875,8 +924,39 @@ The models are able to discriminate response classes effectively given a 0.5 eva
 
 ```{r}
 options(width = 40)
-(metrics<-rbind(model1_metrics, model2_metrics, model3_metrics)%>%flextable())
+t = t(as.matrix(rbind(model1_metrics, model2_metrics, model3_metrics)))
+trainresults = data.frame(t, row.names = rownames(t))
+trainresults <- data.frame(metric = row.names(t), t)
+names(trainresults) = slice(trainresults, 1)
+trainresults <- slice(trainresults, -1)
+trainresults = trainresults%>%rename(metric = model)%>%flextable()
+
+trainresults = colformat_double(trainresults,big.mark=",", digits = 3, na_str = "N/A")
+trainresults = set_caption(trainresults ,'Training Set Performance')
+trainresults = set_table_properties(trainresults, layout = "fixed", width = 0)
+trainresults
 ```
+
+
+
+```{r}
+testresults = cbind(df_test,m1pred,m2pred,m3pred)
+testresults = testresults %>% 
+        mutate(m1pred = as.factor(case_when(m1pred>= 0.5 ~ 1,m1pred < 0.5 ~ 0)))%>% 
+        mutate(m2pred = as.factor(case_when(m2pred>= 0.5 ~ 1,m2pred < 0.5 ~ 0)))%>% 
+        mutate(m3pred = as.factor(case_when(m3pred>= 0.5 ~ 1,m3pred < 0.5 ~ 0)))
+fig = set_caption(tidy(confusionMatrix(data = testresults$target_flag, reference = testresults$m1pred))[c(1,3)]%>%data.frame() %>%
+  merge(tidy(confusionMatrix(data = testresults$target_flag, reference = testresults$m2pred))[c(1,3)]%>%data.frame(), by = 'term')%>%
+  merge(tidy(confusionMatrix(data = testresults$target_flag, reference = testresults$m3pred))[c(1,3)]%>%data.frame())%>%
+  setNames(c('metric','model1','model2','model3'))%>%
+  flextable(),'Test Set Performance')
+fig = colformat_double(fig,
+  big.mark=",", digits = 2, na_str = "N/A")
+autofit(fig)
+```
+
+
+
 
 \newpage
 
@@ -897,11 +977,15 @@ dfcrash = dfpreserve%>%
 ```
 
 ## Cost Model 1: Base Model
-```{r cost_model_saturated}
+```{r cost_model_saturated,fig.show="hold"}
 costm1 = lm(target_amt ~., data = dfcrash)
 summ(costm1)
+```
+
+```{r,fig.show="hold"}
 plot(costm1)
 ```
+
 
 \newpage
 
@@ -925,12 +1009,17 @@ dm2 = function(df){
 }
 ```
 
-```{r cost_model_1}
+```{r cost_model_1, fig.show="hold"}
 dfcrashm2 = dm2(dfcrash)
 costm2 = lm(target_amt ~ .,dfcrashm2)
 summ(costm2)
+
+```
+
+```{r,fig.show="hold"}
 plot(costm2)
 ```
+
 
 \newpage
 
@@ -939,7 +1028,7 @@ We will attempt to correct the heteroskedasticity of the residual plots through 
 
 Lets review the linearity as they currently stand from the plots below.
 
-```{r, fig.height=7}
+```{r, fig.height=7, fig.show="hold"}
 df_num = dfcrash %>% select(where(is.numeric),-target_amt) %>% names()
 dfcrash %>%
   gather(df_num, key = "var", value = "value") %>%
@@ -950,7 +1039,7 @@ dfcrash %>%
 ```
 \newpage
 Now with a log transformation on the response.  We can see that much of the linearity we noticed above is non-existant.
-```{r, fig.height=7, fig.align= 'center'}
+```{r, fig.height=7, fig.align= 'center', fig.show="hold"}
 df_num = dfcrash %>% select(where(is.numeric),-target_amt) %>% names()
 dfcrash %>%
   gather(df_num, key = "var", value = "value") %>%
@@ -975,7 +1064,7 @@ dm3 = function(df){
 }
 ```
 
-```{r, fig.height=7}
+```{r, fig.height=7, fig.show="hold"}
 dfcrashm3 = dm3(dfcrash)
 df_num = dfcrashm3 %>% select(where(is.numeric),-target_amt) %>% names()
 dfcrashm3%>%
@@ -998,29 +1087,40 @@ wts = weightlm$fitted.values+abs(min(weightlm$fitted.values))
 
 ```
 
-```{r, fig.align = 'center'}
+```{r, fig.align = 'center',fig.show="hold"}
 plot(costm1$fitted.values, wts)
 ```
 
 
 The below weighted model has the lowest residual standard error but the $R^2$ is still very low.
-```{r cost_model_3}
+```{r cost_model_3, fig.show="hold"}
 costm3 = lm(target_amt ~ .,dfcrashm3,weights = wts )
 summ(costm3)
+
+```
+
+```{r,fig.show="hold"}
 plot(costm3)
 ```
+
+
 \newpage
+
 ## Cost Model 4 Robust Linear Regression
 
 As an alternative approach to weighting the model we implement a Robust Linear Regression. The function uses Iteratively Reweighted Least Squares (IRLS) to obtain a maximum likelihood estimate of the parameters. The residual standard error is reduced again.
 
-```{r cost_model_4}
+```{r cost_model_4, fig.show="hold"}
 library(MASS)
 costm3b = rlm(target_amt ~ .,dfcrashm3, 
              method = "MM",
               weights = wts
               )
-summary(costm3b)
+colformat_double(tidy(costm3b)%>%flextable(),
+  big.mark=",", digits = 2, na_str = "N/A")
+colformat_double(glance(costm3b)%>%flextable(),
+  big.mark=",", digits = 2, na_str = "N/A")
+
 ```
 
 ```{r fig.align='center'}
@@ -1064,18 +1164,6 @@ dfcrashm5 = dm5(dfcrash)%>%
 ```
 
 
-Now lets take another look at the relationships.
-
-```{r, fig.height=9}
-# df_num = dfcrashm5  %>% select(where(is.numeric)) %>% names()
-# dfcrashm5 %>%
-#   gather(df_num, key = "var", value = "value") %>%
-#   ggplot(aes(x = value, y = severity))+
-#   geom_point() +
-#   facet_wrap(~ var, scales = "free") +
-#   ggthemes::theme_fivethirtyeight()
-```
-
 
 ```{r set_wieghts_, include=FALSE}
 samplelm = lm(severity ~ ., dfcrashm5)
@@ -1084,14 +1172,12 @@ wts = (sqrt(weightlm$fitted.values*-1)) +abs(min(weightlm$fitted.values*-1))
 #+ abs(min(weightlm$fitted.values))
 plot(samplelm$fitted.values, wts)
 ```
-
-```{r cost_model_5__}
+To apply the beta distribution we use a general additive model(GAM); which gives us the option of adding non-linear variables.  After some find tuning; we find that adding the 'log(bluebook)' and 'income' as non-linear predictors improves our models.  
+```{r cost_model_5, include= FALSE}
 costm5 = lm(severity ~ ., dfcrashm5)
-summ(costm5)
-plot(costm5)
 ```
-To apply the beta distribution we use a general additive model(GAM); which gives us the option of adding non-linear variables.  After some find tuning; we find that adding the 'log(bluebook)' and income as non-linear predictors improves our models.  We applied an anova test to confirm.
-```{r cost_model_5}
+
+```{r cost_model_5b , include=FALSE}
 costm5null <- gam(severity ~ mstatus +sex +mstatus +sex +education +travtime +car_use + bluebook +tif +car_type +oldclaim +clm_freq +revoked +mvr_pts +car_age +home_val +yoj +income 
                , wieghts = wts
                ,family=betar(link="logit")
@@ -1106,15 +1192,54 @@ costm5b <- gam(severity ~ mstatus +sex +mstatus +sex +education +car_use + s(log
                , wieghts = wts
                ,family=betar(link="logit")
                , data=dfcrashm5)
-print(costm5b)
-summary(costm5b)
-plot(costm5b$fitted.values,dfcrashm5$severity)
-plot(costm5b$fitted.values, dfcrashm5$severity - costm5b$fitted.values)
-qqPlot(dfcrashm5$severity - costm5b$fitted.values)
+m5sum = summary.gam(costm5b)
 ```
 
+```{r}
+print(m5sum$formula)
+
+print(m5sum$family)
+cbind.data.frame(
+residual.df = m5sum$residual.df,
+r.sq = m5sum$r.sq,
+dispersion = m5sum$dispersion,
+dev.expl = m5sum$dev.expl
+)%>%flextable()
+```
+
+
+```{r, fig.align='center'}
+
+
+
+v1 = m5sum$p.table
+v1 = data.frame(Terms = row.names( v1), v1)
+fig1 = v1%>%flextable()%>%colformat_double(big.mark=",", digits = 2, na_str = "N/A")
+fig1 = set_caption(fig1,'Parametric Terms')
+fig1
+
+v2 = m5sum$s.table
+v2 = data.frame(Terms = row.names( v2), v2)
+fig2 = v2%>%flextable()%>%colformat_double(big.mark=",", digits = 2, na_str = "N/A")
+fig2 = set_caption(fig2,'Non-Parametric Terms')
+fig2
+
+```
+
+
+
+```{r}
+b <- getViz(costm5b)
+check(b,
+      a.qq = list(method = "tnorm", 
+                  a.cipoly = list(fill = "light blue")), 
+      a.respoi = list(size = 0.5), 
+      a.hist = list(bins = 10))
+```
+
+
 ```{r }
-anova(costm5null,costm5b, test = 'Chisq')%>%flextable()
+set_caption(anova(costm5null,costm5b, test = 'Chisq')%>%flextable(),'We applied an anova test to confirm the changes we made from the base model are significant to the model')
 ```
 
 # Conclusion
@@ -1197,8 +1322,12 @@ df = df %>%
 ```
 
 ```{r include = FALSE}
-df$target_flag = predict(model3,df)
-df$target_amt = predict.gam(costm5b,df)
+df$target_flag = predict(model3,type =  'response',df)
+df$target_flag = case_when(
+        df$target_flag >= 0.5 ~ 1,
+        df$target_flag < 0.5 ~ 0)
+df$target_amt = predict.gam(costm5b,family=betar(link="logit"),type = 'response', df)*df$bluebook
+write.csv(df, 'Car Insurance Assignment Predictions')
 ```
 
 

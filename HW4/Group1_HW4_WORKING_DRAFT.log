@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.11.17)  20 NOV 2021 22:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.11.17)  21 NOV 2021 12:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -635,83 +635,83 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [1
 
 {/Users/mustafatelab/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/imputation_plots-1.pdf, id=83, 568.1225pt x 999.735pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/imputation_plots-1.pdf, id=79, 568.1225pt x 999.735pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/imputation_plots-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/imputation_plots-1.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/imputation_plots-1.pdf  used on input line 226.
 (pdftex.def)             Requested size: 369.63066pt x 650.4455pt.
 [2] [3 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/imputation_plots-1.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-1.pdf, id=100, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-1.pdf, id=96, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-1.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-1.pdf  used on input line 259.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-2.pdf, id=101, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-2.pdf, id=97, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-2.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-2.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-2.pdf  used on input line 260.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-3.pdf, id=102, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-3.pdf, id=98, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-3.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-3.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-3.pdf  used on input line 261.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-4.pdf, id=103, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-4.pdf, id=99, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-4.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-4.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-4.pdf  used on input line 262.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-5.pdf, id=104, 411.5375pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-5.pdf, id=100, 411.5375pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-5.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-5.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-5.pdf  used on input line 263.
 (pdftex.def)             Requested size: 234.88023pt x 164.98903pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-6.pdf, id=105, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-6.pdf, id=101, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-6.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-6.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-6.pdf  used on input line 264.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-7.pdf, id=106, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-7.pdf, id=102, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-7.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-7.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-7.pdf  used on input line 265.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-8.pdf, id=107, 408.52625pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-8.pdf, id=103, 408.52625pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-8.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-8.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-8.pdf  used on input line 266.
 (pdftex.def)             Requested size: 234.88206pt x 166.20647pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-9.pdf, id=108, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-9.pdf, id=104, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-9.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-9.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-9.pdf  used on input line 267.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-10.pdf, id=109, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-10.pdf, id=105, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-10.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-10.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-10.pdf  used on input line 268.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-11.pdf, id=110, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-11.pdf, id=106, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-11.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-11.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-11.pdf  used on input line 269.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-12.pdf, id=111, 413.545pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-12.pdf, id=107, 413.545pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-12.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-12.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-12.pdf  used on input line 270.
 (pdftex.def)             Requested size: 234.88383pt x 164.19064pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-13.pdf, id=112, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-13.pdf, id=108, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-13.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-13.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-13.pdf  used on input line 271.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-14.pdf, id=113, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-14.pdf, id=109, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-14.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-14.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-14.pdf  used on input line 272.
 (pdftex.def)             Requested size: 234.8821pt x 167.85619pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-15.pdf, id=114, 404.51125pt x 289.08pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-15.pdf, id=110, 404.51125pt x 289.08pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-15.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-15.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-15.pdf  used on input line 273.
@@ -752,52 +752,52 @@ Overfull \hbox (2.23138pt too wide) in paragraph at lines 259--274
  []
 
 [4 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-1.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-2.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-3.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-4.pdf>] [5 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-5.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-6.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-7.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-8.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-9.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-10.pdf>] [6 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-11.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-12.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-13.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-14.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/view_distributions, figures-side-15.pdf>] [7] [8]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-1.pdf, id=309, 411.5375pt x 266.9975pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-1.pdf, id=305, 411.5375pt x 266.9975pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-1.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-1.pdf  used on input line 784.
 (pdftex.def)             Requested size: 234.88023pt x 152.3857pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-2.pdf, id=310, 411.5375pt x 263.98625pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-2.pdf, id=306, 411.5375pt x 263.98625pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-2.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-2.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-2.pdf  used on input line 785.
 (pdftex.def)             Requested size: 234.88023pt x 150.66707pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-3.pdf, id=311, 411.5375pt x 263.98625pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-3.pdf, id=307, 411.5375pt x 263.98625pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-3.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-3.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-3.pdf  used on input line 786.
 (pdftex.def)             Requested size: 234.88023pt x 150.66707pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-4.pdf, id=312, 411.5375pt x 263.98625pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-4.pdf, id=308, 411.5375pt x 263.98625pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-4.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-4.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-4.pdf  used on input line 787.
 (pdftex.def)             Requested size: 234.88023pt x 150.66707pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-5.pdf, id=313, 411.5375pt x 266.9975pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-5.pdf, id=309, 411.5375pt x 266.9975pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-5.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-5.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-5.pdf  used on input line 788.
 (pdftex.def)             Requested size: 234.88023pt x 152.3857pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-6.pdf, id=314, 411.5375pt x 265.99374pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-6.pdf, id=310, 411.5375pt x 265.99374pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-6.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-6.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-6.pdf  used on input line 789.
 (pdftex.def)             Requested size: 234.88023pt x 151.81282pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-7.pdf, id=315, 411.5375pt x 266.9975pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-7.pdf, id=311, 411.5375pt x 266.9975pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-7.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-7.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-7.pdf  used on input line 790.
 (pdftex.def)             Requested size: 234.88023pt x 152.3857pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-8.pdf, id=316, 411.5375pt x 265.99374pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-8.pdf, id=312, 411.5375pt x 265.99374pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-8.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-8.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-8.pdf  used on input line 791.
 (pdftex.def)             Requested size: 234.88023pt x 151.81282pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-9.pdf, id=317, 411.5375pt x 263.98625pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-9.pdf, id=313, 411.5375pt x 263.98625pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-9.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-9.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-9.pdf  used on input line 792.
 (pdftex.def)             Requested size: 234.88023pt x 150.66707pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-10.pdf, id=318, 411.5375pt x 266.9975pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-10.pdf, id=314, 411.5375pt x 266.9975pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-10.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-10.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-10.pdf  used on input line 793.
@@ -832,27 +832,27 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 80
 (/Users/mustafatelab/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-1.pdf, id=355, 303.1325pt x 315.1775pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-1.pdf, id=351, 303.1325pt x 315.1775pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-1.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-1.pdf  used on input line 803.
 (pdftex.def)             Requested size: 303.13638pt x 315.18153pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-2.pdf, id=356, 459.7175pt x 315.1775pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-2.pdf, id=352, 459.7175pt x 315.1775pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-2.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-2.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-2.pdf  used on input line 805.
 (pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-3.pdf, id=357, 459.7175pt x 315.1775pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-3.pdf, id=353, 459.7175pt x 315.1775pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-3.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-3.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-3.pdf  used on input line 807.
 (pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-4.pdf, id=358, 459.7175pt x 315.1775pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-4.pdf, id=354, 459.7175pt x 315.1775pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-4.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-4.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-4.pdf  used on input line 809.
 (pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-5.pdf, id=359, 459.7175pt x 315.1775pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-5.pdf, id=355, 459.7175pt x 315.1775pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-5.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-5.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-5.pdf  used on input line 811.
@@ -878,7 +878,7 @@ Overfull \hbox (2.4616pt too wide) in paragraph at lines 802--818
  []
 
 [10 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-5.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-6.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-7.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-8.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-9.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flag_categorical_relationship, figures-side-10.pdf>] [11 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-1.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-2.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-3.pdf>] [12 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-4.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-5-5.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/plot covariance-1.pdf, id=477, 512.91624pt x 422.57875pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/plot covariance-1.pdf, id=473, 512.91624pt x 422.57875pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/plot covariance-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/plot covariance-1.pdf>
 Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/plot covariance-1.pdf  used on input line 832.
@@ -890,160 +890,159 @@ Underfull \hbox (badness 10000) in paragraph at lines 905--909
 
 [14]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 1020.
+(Font)              <10> on input line 1021.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 1020.
+(Font)              <7> on input line 1021.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 1020.
+(Font)              <5> on input line 1021.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [15]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_diagnostics-1.pdf, id=514, 285.065pt x 309.155pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_diagnostics-1.pdf, id=510, 285.065pt x 309.155pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_diagnostics-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_diagnostics-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_diagnostics-1.pdf  used on input line 1100.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_diagnostics-1.pdf  used on input line 1101.
 (pdftex.def)             Requested size: 285.0643pt x 309.15424pt.
 
 Overfull \vbox (208.8657pt too high) has occurred while \output is active []
 
 [16 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_diagnostics-1.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-1.pdf, id=527, 436.63126pt x 248.93pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-1.pdf, id=523, 436.63126pt x 248.93pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-1.pdf  used on input line 1120.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-1.pdf  used on input line 1121.
 (pdftex.def)             Requested size: 436.63019pt x 248.92938pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-2.pdf, id=528, 436.63126pt x 248.93pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-2.pdf, id=524, 436.63126pt x 248.93pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-2.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-2.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-2.pdf  used on input line 1121.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-2.pdf  used on input line 1122.
 (pdftex.def)             Requested size: 436.63019pt x 248.92938pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-3.pdf, id=529, 436.63126pt x 250.9375pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-3.pdf, id=525, 436.63126pt x 250.9375pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-3.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-3.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-3.pdf  used on input line 1122.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-3.pdf  used on input line 1123.
 (pdftex.def)             Requested size: 436.63019pt x 250.93687pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-4.pdf, id=530, 436.63126pt x 250.9375pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-4.pdf, id=526, 436.63126pt x 250.9375pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-4.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-4.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-4.pdf  used on input line 1123.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-4.pdf  used on input line 1124.
 (pdftex.def)             Requested size: 436.63019pt x 250.93687pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-5.pdf, id=531, 436.63126pt x 248.93pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-5.pdf, id=527, 436.63126pt x 248.93pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-5.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-5.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-5.pdf  used on input line 1124.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-5.pdf  used on input line 1125.
 (pdftex.def)             Requested size: 436.63019pt x 248.92938pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-6.pdf, id=532, 436.63126pt x 250.9375pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-6.pdf, id=528, 436.63126pt x 250.9375pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-6.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-6.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-6.pdf  used on input line 1125.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-6.pdf  used on input line 1126.
 (pdftex.def)             Requested size: 436.63019pt x 250.93687pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-7.pdf, id=533, 439.6425pt x 248.93pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-7.pdf, id=529, 439.6425pt x 248.93pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-7.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-7.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-7.pdf  used on input line 1126.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-7.pdf  used on input line 1127.
 (pdftex.def)             Requested size: 439.64812pt x 248.93317pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1127
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1128
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1127
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1128
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1127
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1128
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1127
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1128
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1127
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1128
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1120--1127
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1128
 []
  []
 
 [17 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-1.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-2.pdf>] [18 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-3.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-4.pdf>] [19 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-5.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-6.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 1137--1138
+Underfull \hbox (badness 10000) in paragraph at lines 1138--1139
 []\T1/lmr/m/n/10 **[]$http : / / www . sthda . com / english / articles / 36 -[] classi^^\cation -[] methods -[] essentials / 148 -[] logistic -[] regression -[]
  []
 
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-1.pdf, id=591, 457.71pt x 282.05376pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-1.pdf, id=587, 457.71pt x 282.05376pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-1.pdf  used on input line 1139.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-1.pdf  used on input line 1140.
 (pdftex.def)             Requested size: 457.72984pt x 282.06596pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-2.pdf, id=592, 453.695pt x 313.17pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-2.pdf, id=588, 453.695pt x 313.17pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-2.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-2.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-2.pdf  used on input line 1140.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-2.pdf  used on input line 1141.
 (pdftex.def)             Requested size: 453.6939pt x 313.16922pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1139--1141
+Underfull \hbox (badness 10000) in paragraph at lines 1140--1142
 [][]
  []
 
-[20 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-7.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-1.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_Independence-1.pdf, id=612, 545.03625pt x 504.88625pt>
+[20 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_linearity-7.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-1.pdf>] [21 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-2.pdf>]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_Independence-1.pdf, id=623, 545.03625pt x 504.88625pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_Independence-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_Independence-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_Independence-1.pdf  used on input line 1153.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_Independence-1.pdf  used on input line 1156.
 (pdftex.def)             Requested size: 469.7533pt x 435.14899pt.
-[21 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-9-2.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-1.pdf, id=628, 705.63625pt x 693.59125pt>
+[22 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_Independence-1.pdf>]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-1.pdf, id=635, 705.63625pt x 693.59125pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-1.pdf  used on input line 1162.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-1.pdf  used on input line 1166.
 (pdftex.def)             Requested size: 469.75903pt x 461.74039pt.
-[22 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_Independence-1.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-2.pdf, id=640, 460.72125pt x 221.82875pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-2.pdf, id=636, 460.72125pt x 221.82875pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-2.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-2.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-2.pdf  used on input line 1164.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-2.pdf  used on input line 1168.
 (pdftex.def)             Requested size: 460.72012pt x 221.82819pt.
 [23 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-1.pdf>] [24 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm1_fit-2.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [25] [26]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -1.pdf, id=675, 682.55pt x 706.64pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -1.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -1.pdf  used on input line 1309.
-(pdftex.def)             Requested size: 469.7623pt x 486.34215pt.
-[27]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -2.pdf, id=681, 693.59125pt x 693.59125pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -2.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -2.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -2.pdf  used on input line 1311.
-(pdftex.def)             Requested size: 469.77315pt x 469.77315pt.
-[28 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -1.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -3.pdf, id=694, 211.79124pt x 221.82875pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -3.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -3.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -3.pdf  used on input line 1313.
-(pdftex.def)             Requested size: 211.79073pt x 221.82819pt.
-[29 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -2.pdf>] [30 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm2_diagnostics -3.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-1.pdf, id=717, 545.03625pt x 504.88625pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-1.pdf, id=671, 682.55pt x 706.64pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-1.pdf  used on input line 1322.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-1.pdf  used on input line 1306.
+(pdftex.def)             Requested size: 469.7623pt x 486.34215pt.
+[27]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-2.pdf, id=676, 693.59125pt x 693.59125pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-2.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-2.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-2.pdf  used on input line 1308.
+(pdftex.def)             Requested size: 469.77315pt x 469.77315pt.
+[28 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-1.pdf>]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-3.pdf, id=689, 211.79124pt x 221.82875pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-3.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-3.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-3.pdf  used on input line 1310.
+(pdftex.def)             Requested size: 211.79073pt x 221.82819pt.
+[29 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-2.pdf>] [30 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-3.pdf>]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-11-1.pdf, id=712, 545.03625pt x 504.88625pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-11-1.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-11-1.pdf  used on input line 1319.
 (pdftex.def)             Requested size: 469.7533pt x 435.14899pt.
-[31 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-10-1.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/set_flagdf3-1.pdf, id=731, 453.695pt x 313.17pt>
+[31 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-11-1.pdf>]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/set_flagdf3-1.pdf, id=726, 453.695pt x 313.17pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/set_flagdf3-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/set_flagdf3-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/set_flagdf3-1.pdf  used on input line 1355.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/set_flagdf3-1.pdf  used on input line 1352.
 (pdftex.def)             Requested size: 453.6939pt x 313.16922pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1055,10 +1054,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [32 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/set_flagdf3-1.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -1.pdf, id=744, 321.2pt x 345.29pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -1.pdf, id=739, 321.2pt x 345.29pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -1.pdf  used on input line 1457.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -1.pdf  used on input line 1484.
 (pdftex.def)             Requested size: 321.20412pt x 345.2944pt.
 [33]
 
@@ -1068,142 +1067,147 @@ LaTeX Warning: Text page 34 contains only floats.
 Overfull \vbox (4.71147pt too high) has occurred while \output is active []
 
 [34]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -2.pdf, id=754, 330.23375pt x 325.215pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -2.pdf, id=748, 330.23375pt x 325.215pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -2.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -2.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -2.pdf  used on input line 1459.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -2.pdf  used on input line 1486.
 (pdftex.def)             Requested size: 330.243pt x 325.22412pt.
 [35 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -1.pdf>] [36 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/flagm3_diagnostics -2.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-13-1.pdf, id=778, 545.03625pt x 504.88625pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-13-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-13-1.pdf  used on input line 1471.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-14-1.pdf, id=772, 545.03625pt x 504.88625pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-14-1.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-14-1.pdf  used on input line 1498.
 (pdftex.def)             Requested size: 469.7533pt x 435.14899pt.
-[37 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-13-1.pdf>]
-Overfull \hbox (322.67732pt too wide) in alignment at lines 1492--1502
- [] [] [] [] [] [] [] [] [] [] [] [] 
+[37 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-14-1.pdf>]
+Overfull \hbox (15.56882pt too wide) in paragraph at lines 1526--1526
+[]|[]\T1/lmr/m/n/11 transformation 
  []
 
 
-Overfull \hbox (322.67732pt too wide) in alignment at lines 1502--1508
- [] [] [] [] [] [] [] [] [] [] [] [] 
+Overfull \hbox (64.92683pt too wide) in paragraph at lines 1526--1526
+[]|[]\T1/lmr/m/n/11 Feature_Eng+Transform 
  []
 
 
-Overfull \hbox (322.67732pt too wide) in alignment at lines 1508--1530
- [] [] [] [] [] [] [] [] [] [] [] [] 
+Overfull \hbox (15.56882pt too wide) in paragraph at lines 1534--1534
+[]|[]\T1/lmr/m/n/11 transformation 
  []
 
-[38]
 
-LaTeX Warning: Float too large for page by 73.71147pt on input line 1623.
+Overfull \hbox (64.92683pt too wide) in paragraph at lines 1534--1534
+[]|[]\T1/lmr/m/n/11 Feature_Eng+Transform 
+ []
+
+[38] [39]
+
+LaTeX Warning: Float too large for page by 73.71147pt on input line 1812.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-1.pdf, id=797, 436.63126pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-1.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-1.pdf  used on input line 1625.
-(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-2.pdf, id=798, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-2.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-2.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-2.pdf  used on input line 1626.
-(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-3.pdf, id=799, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-3.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-3.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-3.pdf  used on input line 1627.
-(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-4.pdf, id=800, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-4.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-4.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-4.pdf  used on input line 1628.
-(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1625--1629
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1625--1629
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1625--1629
-[]
- []
-
-[39 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-1.pdf>] [40 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-2.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-3.pdf>] [41 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_saturated-4.pdf>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-1.pdf, id=843, 436.63126pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-1.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-1.pdf  used on input line 1705.
-(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-2.pdf, id=844, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-2.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-2.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-2.pdf  used on input line 1706.
-(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-3.pdf, id=845, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-3.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-3.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-3.pdf  used on input line 1707.
-(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-4.pdf, id=846, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-4.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-4.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-4.pdf  used on input line 1708.
-(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1705--1709
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1705--1709
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1705--1709
-[]
- []
-
-[42 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-1.pdf>] [43 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-2.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-3.pdf>] [44 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_1-4.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-17-1.pdf, id=890, 471.7625pt x 505.89pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-17-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-17-1.pdf  used on input line 1721.
-(pdftex.def)             Requested size: 469.76015pt x 503.74278pt.
-[45 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-17-1.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-1.pdf, id=903, 471.7625pt x 505.89pt>
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-1.pdf, id=796, 436.63126pt x 282.05376pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 1725.
-(pdftex.def)             Requested size: 469.76015pt x 503.74278pt.
-[46 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-1.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-1.pdf, id=915, 471.7625pt x 505.89pt>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 1814.
+(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-2.pdf, id=797, 440.64626pt x 282.05376pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-2.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-2.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-2.pdf  used on input line 1815.
+(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-3.pdf, id=798, 440.64626pt x 282.05376pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-3.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-3.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-3.pdf  used on input line 1816.
+(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-4.pdf, id=799, 440.64626pt x 282.05376pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-4.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-4.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-4.pdf  used on input line 1817.
+(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1814--1818
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1814--1818
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1814--1818
+[]
+ []
+
+[40 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-1.pdf>] [41 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-2.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-3.pdf>] [42 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-18-4.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-1.pdf, id=842, 436.63126pt x 282.05376pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 1731.
-(pdftex.def)             Requested size: 469.76015pt x 503.74278pt.
-[47 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-1.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-21-1.pdf, id=927, 436.63126pt x 249.93375pt>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-1.pdf  used on input line 1894.
+(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-2.pdf, id=843, 440.64626pt x 282.05376pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-2.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-2.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-2.pdf  used on input line 1895.
+(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-3.pdf, id=844, 440.64626pt x 282.05376pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-3.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-3.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-3.pdf  used on input line 1896.
+(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-4.pdf, id=845, 440.64626pt x 282.05376pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-4.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-4.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-4.pdf  used on input line 1897.
+(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1894--1898
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1894--1898
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1894--1898
+[]
+ []
+
+[43 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-1.pdf>] [44 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-2.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-3.pdf>] [45 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-20-4.pdf>]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-21-1.pdf, id=889, 471.7625pt x 505.89pt>
 File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
 <use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-21-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 1743.
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 1910.
+(pdftex.def)             Requested size: 469.76015pt x 503.74278pt.
+[46 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-21-1.pdf>]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-22-1.pdf, id=902, 471.7625pt x 505.89pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-22-1.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 1914.
+(pdftex.def)             Requested size: 469.76015pt x 503.74278pt.
+[47 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-22-1.pdf>]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-24-1.pdf, id=914, 471.7625pt x 505.89pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-24-1.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-24-1.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-24-1.pdf  used on input line 1920.
+(pdftex.def)             Requested size: 469.76015pt x 503.74278pt.
+[48 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-24-1.pdf>]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-25-1.pdf, id=926, 436.63126pt x 249.93375pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-25-1.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-25-1.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-25-1.pdf  used on input line 1932.
 (pdftex.def)             Requested size: 436.63019pt x 249.93314pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1214,148 +1218,70 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-1.pdf, id=928, 436.63126pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-1.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-1.pdf  used on input line 1808.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-1.pdf, id=927, 436.63126pt x 282.05376pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-1.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-1.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-1.pdf  used on input line 1997.
 (pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-2.pdf, id=929, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-2.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-2.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-2.pdf  used on input line 1809.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-2.pdf, id=928, 440.64626pt x 282.05376pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-2.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-2.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-2.pdf  used on input line 1998.
 (pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-3.pdf, id=930, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-3.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-3.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-3.pdf  used on input line 1810.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-3.pdf, id=929, 440.64626pt x 282.05376pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-3.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-3.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-3.pdf  used on input line 1999.
 (pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-4.pdf, id=931, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-4.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-4.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-4.pdf  used on input line 1811.
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-4.pdf, id=930, 440.64626pt x 282.05376pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-4.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-4.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-4.pdf  used on input line 2000.
 (pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1808--1812
+Underfull \hbox (badness 10000) in paragraph at lines 1997--2001
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1808--1812
+Underfull \hbox (badness 10000) in paragraph at lines 1997--2001
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1808--1812
+Underfull \hbox (badness 10000) in paragraph at lines 1997--2001
 []
  []
 
-[48 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-21-1.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-1.pdf>] [49 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-2.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-3.pdf>] [50 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_3-4.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-22-1.pdf, id=980, 446.66875pt x 249.93375pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-22-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 1848.
+[49 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-25-1.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-1.pdf>] [50 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-2.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-3.pdf>] [51 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-26-4.pdf>]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-27-1.pdf, id=979, 446.66875pt x 249.93375pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-27-1.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-27-1.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-27-1.pdf  used on input line 2211.
 (pdftex.def)             Requested size: 446.67445pt x 249.93694pt.
-[51 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-22-1.pdf>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Float too large for page by 32.71147pt on input line 1940.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-1.pdf, id=992, 436.63126pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-1.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-1.pdf  used on input line 1942.
-(pdftex.def)             Requested size: 436.63019pt x 282.05305pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-2.pdf, id=993, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-2.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-2.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-2.pdf  used on input line 1943.
-(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-3.pdf, id=994, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-3.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-3.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-3.pdf  used on input line 1944.
-(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-4.pdf, id=995, 440.64626pt x 282.05376pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-4.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-4.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-4.pdf  used on input line 1945.
-(pdftex.def)             Requested size: 440.66533pt x 282.06596pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 1942--1951
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1942--1951
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1942--1951
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1942--1951
-[] \T1/lmr/m/n/10 To
- []
-
-[52 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-1.pdf>] [53 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-2.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-3.pdf>] [54 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5__-4.pdf>]
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-1.pdf, id=1038, 437.635pt x 249.93375pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-1.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-1.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-1.pdf  used on input line 2028.
-(pdftex.def)             Requested size: 437.6406pt x 249.93694pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-2.pdf, id=1039, 440.64626pt x 270.00874pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-2.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-2.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-2.pdf  used on input line 2029.
-(pdftex.def)             Requested size: 440.65189pt x 270.01219pt.
-<Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-3.pdf, id=1040, 440.64626pt x 272.01625pt>
-File: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-3.pdf Graphic file (type pdf)
-<use Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-3.pdf>
-Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-3.pdf  used on input line 2030.
-(pdftex.def)             Requested size: 440.66533pt x 272.02803pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 2026--2032
-\T1/lmr/m/n/10 1873 []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2026--2032
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2026--2032
-[] \T1/lmr/m/n/10 [1]
- []
-
-[55 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-1.pdf>] [56 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-2.pdf> <./Group1_HW4_WORKING_DRAFT_files/figure-latex/cost_model_5-3.pdf>] [57] [58] [59] [60] [61] [62] (./Group1_HW4_WORKING_DRAFT.aux)
+[52] [53 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-27-1.pdf>] [54]
+<Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-32-1.pdf, id=1005, 468.75125pt x 318.18875pt>
+File: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-32-1.pdf Graphic file (type pdf)
+<use Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-32-1.pdf>
+Package pdftex.def Info: Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-32-1.pdf  used on input line 2520.
+(pdftex.def)             Requested size: 468.75009pt x 318.18796pt.
+[55] [56 <./Group1_HW4_WORKING_DRAFT_files/figure-latex/unnamed-chunk-32-1.pdf>] [57] [58] [59] (./Group1_HW4_WORKING_DRAFT.aux)
 Package rerunfilecheck Info: File `Group1_HW4_WORKING_DRAFT.out' has not changed.
-(rerunfilecheck)             Checksum: F01769CE91A46B22F433F66B03BBC57C;3437.
+(rerunfilecheck)             Checksum: 931991D4FEE59FC4583F47400FCCAC09;3417.
  ) 
 Here is how much of TeX's memory you used:
- 13306 strings out of 480331
- 249121 string characters out of 5896457
- 548194 words of memory out of 5000000
- 30708 multiletter control sequences out of 15000+600000
- 464030 words of font info for 72 fonts, out of 8000000 for 9000
+ 13266 strings out of 480331
+ 246454 string characters out of 5896457
+ 552776 words of memory out of 5000000
+ 30674 multiletter control sequences out of 15000+600000
+ 459767 words of font info for 71 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,11n,63p,1682b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Group1_HW4_WORKING_DRAFT.pdf (62 pages, 16967519 bytes).
+ 60i,11n,63p,980b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/mustafatelab/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on Group1_HW4_WORKING_DRAFT.pdf (59 pages, 16343865 bytes).
 PDF statistics:
- 1178 PDF objects out of 1200 (max. 8388607)
- 852 compressed objects within 9 object streams
- 119 named destinations out of 1000 (max. 500000)
- 506 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1113 PDF objects out of 1200 (max. 8388607)
+ 810 compressed objects within 9 object streams
+ 120 named destinations out of 1000 (max. 500000)
+ 468 words of extra memory for PDF output out of 10000 (max. 10000000)
 
