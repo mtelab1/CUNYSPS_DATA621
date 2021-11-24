@@ -12,12 +12,11 @@ output:
 ```{r setup, include=F}
 knitr::opts_chunk$set(echo = F, results = 'asis', comment = NA, warning = F, message = F)
 options(knitr.kable.NA = '')
-
 ```
 
 
 # Introduction
-This analysis predicts the probability that a given insurance customer will be involved in a car crash, as well as the cost of the crash to the insurance company. We begin with an exploration of the data to build an initial impression on the relationships, which will guide how we transform and select variables. We construct two models: a logistic regression for the binary target variable of Crash vs No Crash; and a least-squares model for the target dollar cost variable.  Ultimately, we will integrate both results to help the insurer evaluate their financial risk.
+This analysis predicts the probability that a given insurance customer will be involved in a car crash, as well as the cost of the crash to the insurance company. We begin with an exploratory analysis of the data to guide our preprocessing steps. We then construct two models types: a logistic regression for the binary target variable of Crash vs No Crash; and a least-squares model for the target dollar cost variable.  Ultimately, we will integrate both results to help the insurer evaluate their financial risk.
 
 In this report we will: 
 
@@ -164,7 +163,7 @@ df%>%
 ```
 
 
-We then imputed values for these entries using a combination of recursive partitioning and chained equations. These methods yielded superior results relative to other imputation procedures that we tested (e.g., mode, mean, median, knn). This view is supported by a comparison of the distribution densities for the original data and data with imputed values included for each variable with missing entries (see below). 
+Following this step, we subseqently imputed values for these entries using a combination of recursive partitioning and chained equations. These methods yielded superior results relative to other imputation procedures that we tested (e.g., mode, mean, median, knn). This view is supported by a comparison of the distribution densities for the original data and data with imputed values included for each variable with missing entries (see below). 
 
 
 
@@ -238,31 +237,31 @@ With a complete data set, we then evaluated our variable distributions relative 
 2. others are right skewed without zero inflation: bluebook, income
 3. several numerical variables are also bimodal: car_age, home_val, yoj
 
+
+
+```{r view_distributions, figures-side, fig.show="hold", out.width="50%"}
+df%>%plot_normality()	
+```
+
 A Shapiro-Wilk can also be employed to identify deviations from a normal model. These statistics are included in the following table. We note that a significance level below 0.05 indicates that the data do not fit a normal distribution. 
 
-These assessments provide a basis for identifying potential variable transformations during the modeling stage to improve model fit. And we note that high zero counts may point to contamination in the data that isn't implicit in the variable desriptions. For example, a zero value in home-value may be related to external factors such as renting, under-age driver claims, etc. 
 
 
-```{r view_distributions , figures-side, fig.show="hold", out.width="50%", include=FALSE}
+```{r view_distributions , figures-side, fig.show="hold", out.width="50%"}
 #identify highly skewed data
 df%>%find_skewness(index=FALSE, thres=TRUE)#this is good
+
 # assess normality - Shapiro Wilke
 df%>%
     dplyr::select(!index)%>%
     normality()%>%
     mutate(p_value = formatC(p_value, format = "e", digits = 2), statistic = round(statistic,3))%>%
     flextable(theme_fun = theme_booktabs())
-
 ```
 
-```{r view_distributions, figures-side, fig.show="hold", out.width="50%"}
-df%>%plot_normality()	
-```
+These assessments provide a basis for identifying potential variable transformations during the modeling stage to improve model fit. And we note that high zero counts may point to contamination in the data that isn't implicit in the variable desriptions. For example, a zero value in home-value may be related to external factors such as renting, under-age driver claims, etc. 
 
-```{r smalldatacorrection}
-#Correct obvious data errors - negative values
-df$car_age[df$car_age < 0] <- NA
-```
+
 
 Other diagnostics can be employed to evaluate data structure and ensure data quality. 
 
@@ -270,11 +269,9 @@ The following table provides and overview of the levels of each categorical vari
 
 ```{r}
 # other diagnostics
-
 df%>%
     diagnose_category()%>%
     flextable(theme_fun = theme_booktabs())
-
 ```
 
 We can view our numerical data in relation to measures of spread and central tendency as well as zero count and negative values. The latter can be used to identify erroneous entries for data that should be non-negative. 
@@ -286,8 +283,16 @@ df%>%
     flextable(theme_fun = theme_booktabs())
 ```
 
+We identified and removed one observation for car_age which had a negative value. 
 
-To complement our review of variable distributions we can also quantify the overall count and proportion of outliers for data within each variable. The presence and overall structure (e.g., clumping) of outliers can point unique circumstances that lend insight the observations. They also provide a basis for identifying data points that may exert high leverage and influence with regard to model fit. 
+
+```{r smalldatacorrection}
+#Correct obvious data errors - negative values
+df$car_age[df$car_age < 0] <- NA
+```
+
+
+To complement our review of variable distributions we evaluated the overall count and proportion of outliers for data within each variable. The presence and general structure (e.g., clumping) of outliers can point unique circumstances that lend insight the observations. They also provide a basis for identifying data points that may exert high leverage and influence with regard to model fit. 
 
 The following table lists response variable by decreasesing outlier count and related measures. It's clear that outliers comprise more than 10 percent of the data for homekids, kidsdrive, and target_amt. This is also consistent with the high count of zero values for these variables. 
 
@@ -297,12 +302,17 @@ diagnose_outlier(df)%>%arrange(desc(outliers_cnt)) %>%
  mutate_if(is.numeric, round , digits=3)%>% flextable() 
 ```
 We can assess potential changes in our variable distributions in the absence of outliers as shown in the plots below. If we determine that there are legitimate reasons to remove such data due to contamination, data entry mistakes, or influence, we can remove these entries prior to modeling. However, doing so may also result in a loss of information that, in turn,  reduces our ability to construct a model that generalizes well. 
-```{r , include= FALSE}
+
+
+
+```{r view_outliers, figures-side, fig.show="hold", out.width="50%"}
 df %>% 
     dplyr::select(find_outliers(df, index = FALSE)) %>% 
     plot_outlier()
 ```
-At this stage, we are well positioned to investigate potential relationships between our response variable (target_flag) and our predictors. For example, the following mosaic plots reveal interactions between our categorical predictors and our response, with the possible exception of two variables, 'sex' and 'red_car'. While we will still include these variables in our initial classification model, it is unlikely that they will be retained during the selection process. 
+
+
+At this stage, we are well positioned to investigate potential relationships between our response variable (target_flag) and our predictors. For example, the following mosaic plots reveal interactions between our categorical predictors and our response variable, with the possible exception of two covariates, 'sex' and 'red_car'. While we will still include these variables in our initial classification model, it is unlikely that they will be retained during the selection process. 
 
 
 ```{r flag_categorical_relationship, figures-side, fig.show="hold", out.width="50%"}
@@ -351,8 +361,10 @@ df %>%
 We can also evaluate interactions between numerical predictors and our response using box-plots. At first approximation, it appears that values for 'travtime', 'age', and 'yoj' are distributed similarly across the two levels of our response; suggesting that they may not have very much predictive value. However, this assessment may be conflated by the presence of outliers, particularly 'travtime'. 
 
 
-```{r}
+
+```{r , message=FALSE}
 num_box<-select_if(df, is.numeric)
+num_box<-num_box %>% dplyr::select(-target_amt)
 num_box<-cbind(df$target_flag, num_box)%>%
     rename(target_flag = 'df$target_flag')
 response = names(num_box)[1] #target_flag
@@ -368,23 +380,30 @@ box_fun = function(x) {
     theme_classic()
     
 }
+
 b_plots<-map(explain, ~box_fun(.x)) #creates a list of plots
-ggarrange(plotlist=b_plots, height = .5, ncol = 3)
+ggarrange(plotlist=b_plots, height = .25, width = .25 , ncol = 3)
+
 ```
+
+
+
+\newpage
+
 As an additional check, we can look at the relative distribution of our variables in each response level using histograms (below). It's interesting to note the overall similarity in shape for these subsets with each variable. This pattern may be inherent to the data or, more likely, an indication that the data has been manufactured. 
 
 
-```{r flag_numerical_relationship, message=FALSE}
+```{r , message=FALSE,  fig.show="hold", out.width="50%"}
 #Distributions with target_flag values used for fill. 
-for (v in seq(1,length(df))) {
-      skip_to_next <- FALSE
-      tryCatch(
-        myhist(df,'target_flag', df_num[v]
-              )
-      ,error=function(e){skip_to_next <<- TRUE})
-      if(skip_to_next) { next }  
+df_num = df%>%select_if( is.numeric)%>%names()
+for (v in seq(1,length(df_num))) {
+
+        myhist(df,'target_flag', df_num[v])
 }
 ```
+
+\newpage
+
 
 We should also document any substantive correlations (collinearity) between our covariates that, if unaccounted for, might lead to model misspecification. A paired correlation coefficient greater than .90 would certainly be cause for concern. We see from the correlation matrix below that 'home_val' and 'income' display the greatest correlation (~ 0.58) followed by "old_clm' and clm_freq (~0.50). 
 
@@ -399,8 +418,7 @@ dfpreserve = df
 ```
 
 
-
-```{r plot covariance, fig.height=8, fig.width=8, fig.align = 'center'}
+```{r plot covariance, fig.height=9, fig.width=9, fig.align = 'center'}
 df%>%plot_correlate() 
 ```
 
@@ -456,24 +474,19 @@ We then partitioned our data set into training and testing sets. Each split with
 index <- createDataPartition(df$target_flag,p=0.75,list=FALSE)
     
  #splitting data into training/testing data using the trainIndex object
-
 df_train <- df[index,] #training data (75% of data)  -- note we have one removed row for car age. Need to omit due to NA in train set. 
 df_train <- na.omit(df_train)
     
 df_test <- df[-index,] #testing data (25% of data)
-
 #check counts and frequencies of target_flag for train set and test set - helpful when comparing to confusion matrix
-
 df_train%>%count(target_flag)%>%
     mutate(frequency = n/sum(n))%>%
     flextable()%>%
   set_caption('Training Sample')
-
 df_test%>%count(target_flag)%>%
     mutate(frequency = n/sum(n))%>%
     flextable()%>%
   set_caption('Test Sample')
-
 ```
 \newpage
 
@@ -487,7 +500,7 @@ After variable selection and final elimination of nonsignifiant variables, our m
 
 target_flag ~ kidsdriv + parent1 + mstatus + education + travtime + car_use + bluebook + tif + car_type + oldclaim + clm_freq + revoked + mvr_pts + urbanicity + home_val + income + job
 
-```{r set_flagm1,  fig.show="hold"}
+```{r set_flagm1}
 #build model
 df_train%<>%
     dplyr::select(!index)
@@ -497,15 +510,19 @@ m1pred = predict(model1,df_test,type= 'response')
 summ(model1)
 ```
 
+
+
+\newpage 
+
 #### Crash Model 1 Evaluation
 
 Review of our model diagnostics indicates that the model performs well (AUC = ~ .81) in discriminating between our negative (1=crash) and positive (o= no crash) class outcomes using an evaluation threshold of 0.50. This is consistent with our model sensitivity (i.e., true positive rate = 0.92) and to a lesser extent, specificity (true negative rate = 0.41) measures. 
 
+
+
 ***Diagnostics***
 ```{r, include= FALSE}
-
 #look at fit metrics - create parallel df for this purpose
-
 model1_df<-df_train
 model1_df$predicted<-predict(model1,model1_df,type='response')
 model1_df%<>%
@@ -514,10 +531,8 @@ model1_df%<>%
         predicted < 0.5 ~ 0))
 model1_df$predicted_obs<-as.factor(model1_df$predicted_obs)
 model1_df$target_flag<-as.factor(model1_df$target_flag)
-
 #create confusion matrix
 (model1_cm<-confusionMatrix(data = model1_df$predicted_obs, reference = model1_df$target_flag))
-
 # related model results - drawing code from HW3
 (model1_metrics <- tibble(model = "Base Model: base variables",
                   predictors = length(coef(model1))-1,
@@ -531,16 +546,13 @@ model1_df$target_flag<-as.factor(model1_df$target_flag)
                   auc = auc(roc(response = as.numeric(model1_df$target_flag),
                                 predictor = as.numeric(model1_df$predicted)))[1],  #note: using predicted (probs) vs predicted_obs (0,1)
                   AIC = model1$aic, BIC = BIC(model1)))
-
-
 ```
 
 
 \newpage
 
 
-
-```{r flagm1_diagnostics, fig.align= 'center'}
+```{r flagm1_diagnostics, fig.height = 9, fig.width = 9, fig.align= 'center'}
 #roc curve with AUC
  
 par(pty='s')
@@ -550,19 +562,17 @@ proc<- roc(response=model1_df$target_flag, predictor=model1_df$predicted, plot=T
 ***Dispersion***
 
 
-
 We did not detect overdispersion in the model1 based on our assessment of the residual deviance and chi-square test.
 
 ```{r flagm1_dispersion}
 # evaluate using deviance and quasibinomial comparison
-devres = round(deviance(model1)/df.residual(model1),4) # if considerably greater than one we should be concerned
-print(paste0('We divide the deviance by the residuals to obtain the value ', devres,'. There is no overt concern since the values is not greater than 1'))
-# dble check with two model fit
+Resid_DF = round(deviance(model1)/df.residual(model1),4) # if considerably greater than one we should be concerned
+
 quasi_model <-  glm(target_flag ~ .,family='quasibinomial', df_train) # note: using df_train
 devchi = pchisq(summary(quasi_model)$dispersion * model1$df.residual,
 model1$df.residual, lower = F)
-devchi = round(devchi,4)
-print(paste0('Next we obtain a Chi-Squared test statistic of ', devchi ,  ' This communicates that the null hypothesis is not rejected and their are no problems with dispersion.'))
+Chi_sq = round(devchi,4)
+cbind(Resid_DF,Chi_sq)%>%data.frame()%>%flextable()
 ```
 
 ***Assumption of Linearity***
@@ -586,10 +596,8 @@ with(model1_df, scatter.smooth(bluebook, logit, lpars = list(col = "red", lwd = 
 
 ***Outliers & Influential Points***
 
-To assess any impact of influential observations on our model results we examined both the standardized residuals (.std.resid) and the Cook’s distance (.cooksd). While the latter distinguished several notable outliers (3722, 3592, 6501), these data were not influential (D >1). This is consistent with our plot of standardized residuals (below) - with no observations exeeding 3 standard deviations. 
+To assess any impact of influential observations on our model results we examined both the standardized residuals (.std.resid) and the Cook’s distance (.cooksd). While the latter distinguished several notable outliers (3722, 3592, 6501), these data were not influential (D < 1). This is consistent with our plot of standardized residuals (below) - with no observations exeeding 3 standard deviations. 
 
-
-**http://www.sthda.com/english/articles/36-classification-methods-essentials/148-logistic-regression-assumptions-and-diagnostics-in-r/
 
 ```{r flagm1_Outliers_Influenctial , include= FALSE}
 # Extract model results
@@ -663,6 +671,7 @@ trans_dftest%<>%
     dplyr::select(!c(bluebook, income))
 ```
 
+
 ```{r set_flagm2 ,message = FALSE}
 #build model with transformed vars
 # remove yoj and homekids since they were not significant at .05
@@ -687,7 +696,6 @@ trans_df%<>%
 trans_df$predicted_obs<-as.factor(trans_df$predicted_obs)
 trans_df$target_flag<-as.factor(trans_df$target_flag)
 (model2_cm<-confusionMatrix(data = trans_df$predicted_obs, reference = trans_df$target_flag))
-
 # transformation results
 (model2_metrics <- tibble(model = "transformation Model: reduced variables",
                   predictors = length(coef(model2))-1,
@@ -701,7 +709,6 @@ trans_df$target_flag<-as.factor(trans_df$target_flag)
                   auc = auc(roc(response = as.numeric(trans_df$target_flag),
                                 predictor = as.numeric(trans_df$predicted)))[1],
                   AIC = model2$aic, BIC = BIC(model2)))
-
 ```
 
 ```{r, fig.align='center', fig.height=10,fig.width=10, message = FALSE}
@@ -717,17 +724,7 @@ model2_marg<-mmps(model2,main=NULL)
 
 \newpage
 
-***Independence***
 
-The persistence of a pattern means that we cannot yet rule out the possibility that the model is misspecified.
-
-```{r fig.height=8, fig.width=8}
-res_chk<-trans_df%>%mutate('residuals' = residuals(model2), linpred = predict(model2))
-bins<- group_by(res_chk, cut(linpred, breaks=unique(quantile(linpred, (1:100)/101))))
-diag<-summarize(bins, residuals=mean(residuals), linpred = mean(linpred))
-plot(residuals~linpred, diag, xlab = "linear predictor")
-```
-\newpage
 
 ## Crash Model 3 - Feature engineering and Interactions among predictor variables
 
@@ -818,7 +815,6 @@ int_df %<>% mutate(clm_freq=cut(clm_freq, breaks=c(-Inf, 0, 3, Inf), labels=c("n
 
 ```{r set_flagdf3vars,include=FALSE}
 # Evaluate liquidity via. histogram -- we find two distinct groups that can be converted to factor variable (liquidity) with low/high values 
-
 int_dftest = df_test%<>%
     mutate(home_val = home_val+1)%>%
     mutate(income = income +1)%>%
@@ -896,31 +892,22 @@ model3_marg<-mmps(model3,main=NULL)
 We did not detect overdispersion in the model1 based on our assessment of the residual deviance and chi-square test.
 ```{r flagm3_dispersion}
 # evaluate using deviance and quasibinomial comparison
-devres = deviance(model3)/df.residual(model3) # if considerably greater than one we should be concerned
+Resid_DF = deviance(model3)/df.residual(model3) # if considerably greater than one we should be concerned
 # dble check with two model fit
 quasi_model <-  glm(target_flag ~ .,family='quasibinomial', int_df) # note: using df_train
 devchi = pchisq(summary(quasi_model)$dispersion * model3$df.residual,
 model3$df.residual, lower = F)  
-devchi = round(devchi,4)
-print(paste0('We divide the deviance by the residuals to obtain the value ', devres,'. There is no overt concern since the values is not greater than 1'))
-print(paste0('Next we obtain a Chi-Squared test statistic of ', devchi ,  ' This communicates that the null hypothesis is not rejected and their are no problems with dispersion.'))
+Chi_sq = round(devchi,4)
+cbind(Resid_DF,Chi_sq)%>%data.frame()%>%flextable()
 ```
 \newpage
 
-The persistence of a pattern means that we cannot yet rule out the possibility that the model is misspecified.
-```{r fig.height=8, fig.width=8}
-res_chk<-int_df%>%mutate('residuals' = residuals(model3), linpred = predict(model3))
-bins<- group_by(res_chk, cut(linpred, breaks=unique(quantile(linpred, (1:100)/101))))
-diag<-summarize(bins, residuals=mean(residuals), linpred = mean(linpred))
-plot(residuals~linpred, diag, xlab = "linear predictor")
-```
-\newpage
 
 ## Crash Logistic Classification Model Selection
 
 Model performance is similar across all cases. Model1 had the highest accuracy. Model2 has the lowest AIC.
 
-The models are able to discriminate response classes effectively given a 0.5 evaluation threshold. While the discriminatory performance was similar across our models, we selected model2 for test validation since it had the lowest AIC and highest AUC values
+The models are able to discriminate response classes effectively given a 0.5 evaluation threshold. While the discriminatory performance was similar across our models, we selected model2 for test validation since it had the lowest AIC and highest AUC values.
 
 ```{r}
 options(width = 40)
@@ -930,14 +917,13 @@ trainresults <- data.frame(metric = row.names(t), t)
 names(trainresults) = slice(trainresults, 1)
 trainresults <- slice(trainresults, -1)
 trainresults = trainresults%>%rename(metric = model)%>%flextable()
-
 trainresults = colformat_double(trainresults,big.mark=",", digits = 3, na_str = "N/A")
 trainresults = set_caption(trainresults ,'Training Set Performance')
 trainresults = set_table_properties(trainresults, layout = "fixed", width = 0)
 trainresults
 ```
 
-
+We circle back to the test subset that we partitioned earlier.  The below confirms the performance for model2 and we can move forward with this as our select.
 
 ```{r}
 testresults = cbind(df_test,m1pred,m2pred,m3pred)
@@ -954,8 +940,6 @@ fig = colformat_double(fig,
   big.mark=",", digits = 2, na_str = "N/A")
 autofit(fig)
 ```
-
-
 
 
 \newpage
@@ -977,15 +961,17 @@ dfcrash = dfpreserve%>%
 ```
 
 ## Cost Model 1: Base Model
-```{r cost_model_saturated,fig.show="hold"}
+```{r cost_model_saturated}
 costm1 = lm(target_amt ~., data = dfcrash)
 summ(costm1)
+
 ```
 
-```{r,fig.show="hold"}
+\newpage
+
+```{r}
 plot(costm1)
 ```
-
 
 \newpage
 
@@ -1009,16 +995,18 @@ dm2 = function(df){
 }
 ```
 
-```{r cost_model_1, fig.show="hold"}
+```{r cost_model_1}
 dfcrashm2 = dm2(dfcrash)
 costm2 = lm(target_amt ~ .,dfcrashm2)
 summ(costm2)
-
 ```
 
-```{r,fig.show="hold"}
+\newpage
+
+```{r}
 plot(costm2)
 ```
+
 
 
 \newpage
@@ -1037,7 +1025,9 @@ dfcrash %>%
   facet_wrap(~ var, scales = "free") +
   ggthemes::theme_fivethirtyeight()
 ```
+
 \newpage
+
 Now with a log transformation on the response.  We can see that much of the linearity we noticed above is non-existant.
 ```{r, fig.height=7, fig.align= 'center', fig.show="hold"}
 df_num = dfcrash %>% select(where(is.numeric),-target_amt) %>% names()
@@ -1084,7 +1074,6 @@ Below is a plot of how the weights will be applied along the scale of the respon
 weightlm = glm(costm1$residuals ~ costm1$fitted.values)
 wts = weightlm$fitted.values+abs(min(weightlm$fitted.values))
 #+ abs(min(weightlm$fitted.values))
-
 ```
 
 ```{r, fig.align = 'center',fig.show="hold"}
@@ -1093,13 +1082,15 @@ plot(costm1$fitted.values, wts)
 
 
 The below weighted model has the lowest residual standard error but the $R^2$ is still very low.
-```{r cost_model_3, fig.show="hold"}
+```{r cost_model_3}
 costm3 = lm(target_amt ~ .,dfcrashm3,weights = wts )
 summ(costm3)
 
 ```
 
-```{r,fig.show="hold"}
+\newpage
+
+```{r}
 plot(costm3)
 ```
 
@@ -1120,8 +1111,8 @@ colformat_double(tidy(costm3b)%>%flextable(),
   big.mark=",", digits = 2, na_str = "N/A")
 colformat_double(glance(costm3b)%>%flextable(),
   big.mark=",", digits = 2, na_str = "N/A")
-
 ```
+
 
 ```{r fig.align='center'}
 plot(costm3b$fitted.values,dfcrashm3$target_amt)
@@ -1195,9 +1186,10 @@ costm5b <- gam(severity ~ mstatus +sex +mstatus +sex +education +car_use + s(log
 m5sum = summary.gam(costm5b)
 ```
 
+\newpage
+
 ```{r}
 print(m5sum$formula)
-
 print(m5sum$family)
 cbind.data.frame(
 residual.df = m5sum$residual.df,
@@ -1209,24 +1201,19 @@ dev.expl = m5sum$dev.expl
 
 
 ```{r, fig.align='center'}
-
-
-
 v1 = m5sum$p.table
 v1 = data.frame(Terms = row.names( v1), v1)
 fig1 = v1%>%flextable()%>%colformat_double(big.mark=",", digits = 2, na_str = "N/A")
 fig1 = set_caption(fig1,'Parametric Terms')
 fig1
-
 v2 = m5sum$s.table
 v2 = data.frame(Terms = row.names( v2), v2)
 fig2 = v2%>%flextable()%>%colformat_double(big.mark=",", digits = 2, na_str = "N/A")
 fig2 = set_caption(fig2,'Non-Parametric Terms')
 fig2
-
 ```
 
-
+\newpage
 
 ```{r}
 b <- getViz(costm5b)
@@ -1242,11 +1229,6 @@ check(b,
 set_caption(anova(costm5null,costm5b, test = 'Chisq')%>%flextable(),'We applied an anova test to confirm the changes we made from the base model are significant to the model')
 ```
 
-# Conclusion
-
-The above analysis uses data on a collection of drivers to predict who will be involved in a crash, and the cost implications given said crash.  
-We approached the former using logistic regression to assign a probability of crash; and letting a designated threshold bucket the observations into crash vs no-crash.  In reviewing the distribtion of the variables and their relationship to the target, we opted to transform a selection of the variables into factors based on the grouping behavior.  Through additional transformations and feature engineering, we landed on a model that minimized AUC and AIC.
-After building the model to bucket the observations into the binary groups, we moved onto constructing second model to predict the cost implications.  We were able to make slight improvements through feature selections and tranformations, but the low $R^2$ warrented additional experimenting.  Prompted by the distribution of the residuals; we applied WLS, Robust Regression, and IWLS.  The jump in $R^2$ was encouraging.  However, it appeared that 'bluebook' variable was carrying all of the models.  The decision was made to rethink the target variable as a ratio 'bluebook' and regression on a [0,1] severity using the beta function.
 
 
 ```{r initial_cleaning_, include = FALSE}
@@ -1254,7 +1236,6 @@ raw = test
 # initial clean of col names
 raw%<>%clean_names
 # remove any empty rows and cols
-
 # assess presence of duplicates
 get_dupes(raw)
 # basic characterization
@@ -1290,7 +1271,6 @@ df$education<-factor(df$education, levels=c("High School", "Bachelors", "Masters
 
 
 ```{r imputations__, include = FALSE}
-
 car_age<-imputate_na(df, car_age, target_flag, method = "rpart", seed = 999)
 home_val<-imputate_na(df, home_val, target_flag, method = "rpart")
 yoj<- imputate_na(df, yoj, target_flag, method = "rpart")  
@@ -1330,6 +1310,13 @@ df$target_amt = predict.gam(costm5b,family=betar(link="logit"),type = 'response'
 write.csv(df, 'Car Insurance Assignment Predictions')
 ```
 
+\newpage
+
+\newpage
 
 
+# Conclusion
 
+The above analysis uses data on a collection of drivers to predict who will be involved in a crash, and the cost implications given said crash.  
+We approached the former using logistic regression to assign a probability of crash; and letting a designated threshold bucket the observations into crash vs no-crash.  In reviewing the distribtion of the variables and their relationship to the target, we opted to transform a selection of the variables into factors based on the grouping behavior.  Through additional transformations and feature engineering, we landed on a model that minimized AUC and AIC.
+After building the model to bucket the observations into the binary groups, we moved onto constructing second model to predict the cost implications.  We were able to make slight improvements through feature selections and tranformations, but the low $R^2$ warrented additional experimenting.  Prompted by the distribution of the residuals; we applied WLS, Robust Regression, and IWLS.  The jump in $R^2$ was encouraging.  However, it appeared that 'bluebook' variable was carrying all of the models.  The decision was made to rethink the target variable as a ratio 'bluebook' and regression on a [0,1] severity using the beta function.
